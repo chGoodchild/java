@@ -1,0 +1,30 @@
+package caesarcipher;
+
+import java.util.Scanner;
+
+public class Main {
+    public static String encode(String input, int shift) {
+	char a;
+	int offset;
+	Scanner scan = new Scanner(input);
+	String shifted = "";
+	// while (scan.hasNext()) {
+
+	//     a = scan.next(".").charAt(0);
+	//     if ((int) a > 90) {
+	// 	offset = 97;
+	//     } else {
+	// 	offset = 65;
+	//     }
+
+	//     a = (char) ((((int) shift + shift) - offset) % 26);
+	//     shifted = shifted + a;
+	// }
+
+	return shifted;
+    }
+
+    public static void main(String[] args) {
+
+    }
+}

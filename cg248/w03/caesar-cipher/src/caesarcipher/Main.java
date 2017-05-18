@@ -1,0 +1,32 @@
+package caesarcipher;
+
+public class Main {
+    public static String encode(String input, int shift) {
+	char a;
+	int offset = 0;
+	String shifted = "";
+	for (int i = 0; i < input.length(); i++) { 
+	    a = input.charAt(i);
+
+		// Convert 'a' to a character, shift it, subtract the
+		// offset, and make sure it is still in the alphabet
+		// (within a range of 26 characters). Then add the offset
+		// back on and convert it back into a character.
+	    if ((64 < (int) a) && ((int) a < 91)) { 
+		offset = 65;
+		a = (char) (offset + ((((int) a) + shift - offset) % 26));
+	    }
+
+	    if ((96 < (int) a) && ((int) a < 123)) { 
+		offset = 97;
+		a = (char) (offset + ((((int) a) + shift - offset) % 26));
+	    }
+		shifted = shifted + a;
+	}
+	return shifted;
+    }
+
+    public static void main(String[] args) {
+
+    }
+}

@@ -1,0 +1,39 @@
+Bitte keine PDFs committen
+
+Es sollte sich an den google style guide für java gehalten werden also auch camelCase benutzen:
+good_input -> goodInput (z.B. in der Aufgabe time to words)
+
+
+Punkte: 14/14
+
+
+Validation results for cg248/w02
+=====================================
+
+----------- Exercise: int-to-string
+Running 11 testcases: ALL PASSED
+
+
+----------- Exercise: integer-primitives
+Running 29 testcases: ALL PASSED
+
+
+----------- Exercise: weird-numbers
+Running 41 testcases: ALL PASSED
+
+
+----------- Exercise: time-to-words
+Running 41 testcases: ALL PASSED
+
+
+----------- Exercise: simple-functions
+Running 21 testcases: ALL PASSED
+
+
+----------- Exercise: convert-units
+Running 16 testcases: ALL PASSED
+
+
+----------- Exercise: conditional-functions
+Running 24 testcases: ALL PASSED
+

@@ -1,0 +1,17 @@
+package whatsyourname;
+
+
+import java.io.*;
+import java.util.Scanner;
+
+
+public class Main {
+
+    /**
+     * Read pre- and surname from stdin and print a greeting.
+     */
+    public static void main(String[] args)  {
+        Scanner scan = new Scanner(System.in);
+        // please put your code here ...
+    }
+}

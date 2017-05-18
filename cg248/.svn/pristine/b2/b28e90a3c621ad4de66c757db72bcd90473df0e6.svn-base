@@ -1,0 +1,94 @@
+package timetowords;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
+	int hours = -1;
+	int minutes = -1;
+	if(scan.hasNextInt()) hours = scan.nextInt();
+	if(scan.hasNextInt()) minutes = scan.nextInt();
+	int good_input = 1;
+
+	if(!((1 <= hours) && (12 >= hours))) {
+	    System.out.println("Wrong Input");
+	    good_input = 0;
+	}
+
+	if(!((0 <= minutes) && (60 >= minutes))) {
+	    System.out.println("Wrong Input");
+	    good_input = 0;
+	}
+
+	if(good_input == 1) {
+	    if(minutes == 0) {
+		System.out.println(hours(hours) + " o'clock");
+	    } else {
+		// Beyond half past:
+		if(minutes > 30) hours = ((hours + 1) % 13);
+		System.out.println(min(minutes) + hours(hours));
+	    }
+	}	
+    }
+
+    private static String hours(int hours) {
+	if(hours == 1) return "one";
+	if(hours == 2) return "two";
+	if(hours == 3) return "three";
+	if(hours == 4) return "four";
+	if(hours == 5) return "five";
+	if(hours == 6) return "six";
+	if(hours == 7) return "seven";
+	if(hours == 8) return "eight";
+	if(hours == 9) return "nine";
+	if(hours == 10) return "ten";
+	if(hours == 11) return "eleven";
+	if(hours == 12) return "twelve";
+
+	// This should never occur...
+	return "Wrong Input";
+    }
+
+    private static String minutes_till_thirty(int minutes) {
+	int tens = minutes / 10;
+	int ones = (minutes - (10 * (tens)));
+
+	// Why implement the same thing twice?
+	if(minutes <= 12) {
+	    return hours(minutes) + " minutes";
+	} else {
+	
+	    if(tens == 1) {
+		if(ones == 3) return "thirteen" + " minutes";
+		if(ones == 4) return "fourteen" + " minutes";
+		if(ones == 5) return "quater";
+		if(ones == 6) return "sixteen" + " minutes";
+		if(ones == 7) return "seventeen" + " minutes";
+		if(ones == 8) return "eighteen" + " minutes";
+		if(ones == 9) return "nineteen" + " minutes";
+	    }
+
+	    if(tens == 2) {
+		// Lets recycle again!
+		if(ones > 0) return "twenty" + hours(minutes) + " minutes";
+		if(ones == 0) return "twenty" + " minutes";
+	    }
+
+	    if(tens == 3) {
+		if(ones == 0) return "half past";
+	    }
+
+	    // This should never occur...
+	    return "Wrong Input";
+	}
+    }
+
+    private static String min(int min) {
+	if(min <= 30) {
+	    return minutes_till_thirty(min) + " past ";
+	} else {
+	    return minutes_till_thirty(60 - min) + " to ";
+	}
+    }
+}

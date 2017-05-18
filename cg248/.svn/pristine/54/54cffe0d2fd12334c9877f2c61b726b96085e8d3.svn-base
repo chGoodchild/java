@@ -1,0 +1,23 @@
+Bitte in Zukunft keine PDFs mehr committen
+
+Punkte: 8/8
+
+Validation results for cg248/w01
+=====================================
+
+----------- Exercise: stdin
+Running 6 testcases: ALL PASSED
+
+
+----------- Exercise: whats-your-name
+Running 7 testcases: ALL PASSED
+
+
+----------- Exercise: add-two-ints
+Running 22 testcases: ALL PASSED
+
+
+----------- Exercise: average-rounded-number
+Running 9 testcases: ALL PASSED
+Ziemlich umständlich gelöst, ich rate Dir die Musterlösung anzuschauen
+Wenn in der Aufgabenstellung "floats" steht bitte auch mit floats arbeiten

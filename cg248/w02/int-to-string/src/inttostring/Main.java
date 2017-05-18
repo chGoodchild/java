@@ -1,0 +1,16 @@
+package inttostring;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
+
+	// Check if it has an integer and report the result...
+	if(scan.hasNextInt()) {
+	    System.out.println("Found int: " + scan.nextInt());
+	} else {
+	    System.out.println("No int");
+	}
+    }
+}

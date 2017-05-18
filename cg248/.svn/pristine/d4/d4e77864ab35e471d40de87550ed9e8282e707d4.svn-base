@@ -1,0 +1,26 @@
+package averageroundednumber;
+
+import java.util.Scanner;
+
+// read two ints from stdin, add them and print out the result.
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
+	float first = scan.nextFloat();
+	float second = scan.nextFloat();
+
+	float average = ((first + second) / ((float) 2.0));
+	float remainder =  average % 0.01;
+
+	float remainder =  average % 0.01;
+	
+	if(remainder >= 0.005) {
+	    average = average - remainder + 0.01;
+	} else {
+	    average = average - remainder;
+	}
+	
+	System.out.println(average);
+    }
+}

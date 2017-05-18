@@ -1,0 +1,42 @@
+package maximumhourglass;
+ 
+import java.*;
+
+public class Main {
+    public static void main(String[] args) {
+	// Empty
+
+	int[][] multi = new int[][]{
+	    { 1, 1, 1, 0, 0, 0},
+	    { 0, 1, 0, 0, 0, 0},
+	    { 1, 1, 1, 0, 0, 0},
+	    { 0, 0, 0, 0, 0, 0},
+	    { 0, 0, 0, 0, 0, 0},
+	    { 0, 0, 0, 0, 0, 0},
+	};
+
+	maxHourglass(multi);
+    }
+
+    public static int maxHourglass(int[][] matrix) {
+	int max = 0;
+	int localSum;
+	for (int n = 0; n < 4; n++) {
+	    for (int m = 0; m < 4; m++) {
+	 	localSum = matrix[m][n];
+	 	localSum += matrix[m][n + 1];
+	 	localSum += matrix[m][n + 2];
+	 	localSum += matrix[m + 1][n + 1];
+	 	// localSum = matrix[m + 2][n];
+	 	// localSum += matrix[m + 2][n + 1];
+	 	// localSum += matrix[m + 2][n + 2];
+
+	 	if (localSum > max) {
+	 	    max = localSum;
+	 	}
+	    }
+	}
+	return max;
+	//	return 7;
+    }
+}

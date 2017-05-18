@@ -1,0 +1,29 @@
+package weirdnumbers;
+
+import java.util.Scanner;
+
+public class Main {
+    public void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
+	int input = scan.nextInt();
+	bool is_weird = false;
+
+	if((input % 2) == 1) {
+	    // odd number
+	    is_weird = true;
+	} else {
+	    // even number
+	    if(2 < input < 5) is_weird = false;
+	    if(6 < input < 20) is_weird = true;
+	    if(input > 20) is_weird = false;
+	}
+
+	if(input < 0) is_weird = true;
+
+	if(is_weird == true) {
+	    System.out.println("Weird");
+	} else {
+	    System.out.println("Not Weird");
+	}
+    }
+}

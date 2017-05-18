@@ -1,0 +1,90 @@
+package linenumbers;
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner input = new Scanner(System.in);
+
+	int n = -1;
+	int m = -1;
+
+	try {
+	    n = Integer.parseInt(args[0]);
+	} catch (ArrayIndexOutOfBoundsException exception) {
+	    // Do nothing
+	} catch (NumberFormatException e) {
+	    System.out.println("Bad arguments.");
+	    System.out.println("Usage: line-numbers [start-number [end-number]]");
+	    System.exit(1);
+	} 
+
+	try {
+	    m = Integer.parseInt(args[1]);
+	} catch (ArrayIndexOutOfBoundsException exception) {
+	    // Do nothing
+	} catch (NumberFormatException e) {
+	    System.out.println("Bad arguments.");
+	    System.out.println("Usage: line-numbers [start-number [end-number]]");
+	    System.exit(1);
+	} 
+
+	// First read the input
+	ArrayList<String> myList = new ArrayList<String>();
+
+	if((n == -1) && (m == -1)) {
+	    // This might work in a test case, because test cases have
+	    // an end of file. When this runs in the terminal, it gets
+	    // stuck in the loop though...
+	    while(input.hasNext()) {
+		myList.add(input.nextLine());
+	    }
+	} else {
+	    for(int i = 0; ((i <= n) || (i <= m)); i++) {
+		myList.add(input.nextLine());
+	    }
+	}
+
+	// Ok the list should be full now
+
+
+	//     • Ohne Argumente werden alle Zeilen ausgegeben.
+	//     • Mit einem Argument n werden die Zeilen ab Zeile n
+	//     ausgegeben. Ist n gr osser als die Anzahl der Zeilen in
+	//     der Eingabe, soll gar nichts ausgegeben werden.
+	if(m == -1) {
+	    if(n < 1) n = 1;
+	    for(; n < myList.size(); n++) {
+		System.out.println(n + " " + myList.get(n - 1));
+	    }
+	}
+
+	//     • Mit zwei Argumenten n und m werden die Zeilen von
+	//     Zeile n bis Zeile m ausgegeben (soweit vorhanden). Ist
+	//     m < n, oder n gr osser als die Anzahl der Zeilen in der
+	//     Eingabe, soll gar nichts ausgegeben werden.
+	if(!(m == -1) && !(n > myList.size())) {
+	    if(n < 1) n = 1;
+	    for(; n < m; n++) {
+		System.out.println(n + " " + myList.get(n - 1));
+	    }
+	}
+
+
+	// for(; n < m; n++) {
+	//     System.out.println(n + " " + myList.get(n));
+	// }
+
+	// if(arguments.hasNextInt()) {
+	//     int in = arguments.nextInt();
+	//     for(int i = 0; ((i < in) && (input.hasNext())); i++) 
+	// 	System.out.println(i + " " + input.nextLine());
+	// } else {
+	//     for(int i = 0; input.hasNext(); i++) 
+	// 	System.out.println(i + " " + input.nextLine());
+	// }
+    }
+}

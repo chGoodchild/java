@@ -1,0 +1,30 @@
+package simplefunctions;
+
+import java.util.Scanner;
+import java.lang.String;
+
+public class Main {
+    public static void main(String[] args) {
+	// Empty for now..
+    }
+
+    public static double distanceOrigin(double x, double y) {
+	return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+    }
+
+    public static double cubeVolume(double x) {
+	return Math.pow(x, 3);
+    }
+
+    public static double cubeSurface(double x) {
+	return (Math.pow(x, 2) * 6);
+    }
+
+    public static String stringInsert(String str, int pos) {
+	return (str.substring(0, pos) + "_" + str.substring(pos, str.length() - 1));
+    }
+
+    public static double capacitance(double epsilonR, double A, double d) {
+	return (epsilonR * A / (4 * Math.PI * d));
+    }
+}

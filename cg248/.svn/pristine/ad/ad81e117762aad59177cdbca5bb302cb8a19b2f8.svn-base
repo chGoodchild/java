@@ -1,0 +1,28 @@
+package convertunits;
+
+public class Main {
+    public static void main(String[] args) {
+	// Empty for now
+    }
+
+
+    // Convert km to miles
+    public static double km2miles(double x) {
+	return 0.621371 * x;
+    }
+
+    // Convert miles to km
+    public static double miles2km(double x) {
+	return x / 0.621371;
+    }
+
+    // Convert celsius to fahrenheit
+    public static double celsius2fahrenheit(double x) {
+	return 32 + (9 / 5) * x;
+    }
+
+    // Convert farhenheit to celsius
+    public static double fahrenheit2celsius(double x) {
+	return x * (5 / 9) - 32;
+    }
+}

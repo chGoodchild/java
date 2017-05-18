@@ -1,0 +1,27 @@
+package convertunits;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+	// Empty for now
+    }
+
+
+    // Convert km to miles
+    public static double km2miles(double x) {
+	return 0.621371 * x;
+    }
+
+    public static double miles2km(double x) {
+	return x / 0.621371;
+    }
+
+    public static double celsius2fahrenheit(double x) {
+	return 32 + (9 / 5) * x;
+    }
+
+    public static double fahrenheit2celsius(double x) {
+	return x * (5 / 9) - 32;
+    }
+}
