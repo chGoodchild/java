@@ -1,0 +1,134 @@
+package listoperations;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main {
+    public static void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
+	String command;
+	String inputOne;
+	String inputTwo;
+	int sorted;
+	int valid;
+	String tmp;
+	ArrayList<String> str = new ArrayList<String>();
+	// REGEX
+	while (scan.hasNext()) {
+	    valid = 0;
+	    command = scan.next();
+
+	    if (command.matches("^append")) {
+		valid = 1;
+		if (scan.hasNext()) {
+		    inputOne = scan.next();
+		    if (inputOne.matches("[a-z]*[A-Z]*[0-9]*[a-z]*[A-Z]*[0-9]*")) {
+			// The input is a valid word
+			str.add(inputOne);
+		    } else {
+			System.out.println("INVALID COMMAND");
+		    }
+		} //  else {
+		//     // This should not happen. We are not told how the
+		//     // program should act in this state though...
+		// }
+	    }
+
+	    if (command.matches("^pop")) {
+		valid = 1;
+		if (str.size() > 0) {
+		    str.remove(str.size() - 1);
+		} else {
+		    System.out.println("DOES NOT COMPUTE");
+		}
+	    }
+
+	    if (command.matches("^set")) {
+		valid = 1;
+		inputOne = scan.next();
+		if (scan.hasNext()) {
+		    if (inputOne.matches("[0-9]*")) {
+			if (scan.hasNext()) {
+			    inputTwo = scan.next();
+			} else {
+			    inputTwo = "";
+			}
+			if ((Integer.parseInt(inputOne) < 0) || Integer.parseInt(inputOne) > str.size() - 1) {
+			    System.out.println("DOES NOT COMPUTE");
+			} else {
+			    str.set(Integer.parseInt(inputOne), inputTwo);
+			}
+		    } else {
+			    System.out.println("DOES NOT COMPUTE");
+		    }
+		} //  else {
+		//     // This should not happen. We are not told how the
+		//     // program should act in this state though...
+		// }
+
+	    }
+
+	    if (command.matches("^remove-first")) {
+		valid = 1;
+		inputOne = scan.next();
+		for (int i = 0; i < str.size(); i++) {
+		    if (str.get(i).matches(inputOne)) {
+			str.remove(i);
+			break;
+		    }
+		}
+	    }
+
+	    if (command.matches("^remove-all")) {
+		valid = 1;
+		inputOne = scan.next();
+		for (int i = 0; i < str.size(); i++) {
+		    if (str.get(i).matches(inputOne)) {
+			str.remove(i);
+		    }
+		}
+	    }
+
+	    if (command.matches("^print")) {
+		valid = 1;
+		System.out.print("::");
+		for (int i = 0; i < str.size(); i++) {
+		    System.out.print(" " + str.get(i));
+		}
+		System.out.println("");
+	    }
+
+	    if (command.matches("^sort")) {
+		valid = 1;
+		sorted = 0;
+		Collections.sort(str);
+		// while (sorted == 0) {
+		//     sorted = 1;
+		//     for (int i = 0; i < (str.size() - 1); i++) {
+		// 	// if (str.get(i + 1).length() < str.get(i).length()) {
+		// 	//     sorted = 0;
+		// 	//     tmp = str.get(i);
+		// 	//     str.set(i, str.get(i + 1));
+		// 	//     str.set(i + 1, tmp);
+		// 	// }
+		//     }
+		// }
+	    }
+
+	    if (command.matches("^reverse")) {
+		valid = 1;
+		for (int i = 0; i < (str.size() / 2); i++) {
+		    tmp = str.get(i);
+		    str.set(i, str.get(str.size() - i - 1));
+		    str.set((str.size() - i - 1), tmp);
+		}
+	    }
+
+	    if (valid == 0) {
+		// This state is not permitted!
+		System.out.println("INVALID COMMAND");
+	    }
+	}
+    }
+}

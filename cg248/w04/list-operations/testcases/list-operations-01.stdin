@@ -1,0 +1,19 @@
+append Hallo
+append Welt
+print
+set 0 Hi
+pop
+print
+append World
+append Welt
+append World
+append Welt
+print
+remove-first World
+print
+remove-all Welt
+print
+reverse
+print
+sort
+print

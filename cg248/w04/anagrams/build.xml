@@ -1,0 +1,50 @@
+<project default="all">
+	<property name="src-dir" location="./src" />
+	<property name="bin-dir" location="./bin" />
+        
+        <path id="classpath.base">      
+        </path>
+
+        <target name="checkstyle">
+                <taskdef resource="checkstyletask.properties"
+                         classpath="./checkstyle-5.3-all.jar"/>
+                <checkstyle config = "./checkstyle_config.xml"
+                      failOnViolation="false" >
+                        <fileset dir="${src-dir}" includes="*.java"/>
+                        <fileset dir="${src-dir}" includes="*/*.java"/>
+                        <formatter type="plain" usefile="false"/>
+                </checkstyle>
+        </target>
+
+	<path id="classpath.test">
+		<pathelement location="./lib/junit-4.9b2.jar" />
+		<pathelement location="${bin-dir}" />
+		<path refid="classpath.base" />
+        </path>
+
+	<target name="compile">
+		<javac srcdir="${src-dir}" verbose="false" destdir="${bin-dir}" includeantruntime="false">
+			<classpath refid="classpath.test" />
+		</javac>
+	</target>
+	
+	<target name="clean">
+		<delete verbose="true">
+			<fileset dir="${bin-dir}" includes="**/*.class" />
+		</delete>
+	</target>
+
+	<target name="test" depends="compile">
+		<junit>
+			<classpath refid="classpath.test" />
+			<batchtest fork="yes">
+				<formatter type="plain" usefile="false"/>
+				<fileset dir="${src-dir}">
+					<include name="**/*Test.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+
+	<target name="all" depends="test, checkstyle" />
+</project>

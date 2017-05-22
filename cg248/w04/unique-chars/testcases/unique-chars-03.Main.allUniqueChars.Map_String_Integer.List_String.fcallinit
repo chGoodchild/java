@@ -1,0 +1,5 @@
+List<String> l = new ArrayList<String>();
+l.add("hhelloo");
+l.add("wwoorrld");
+Map<String, Integer> m = new HashMap<String, Integer>();
+allUniqueChars(m, l);
