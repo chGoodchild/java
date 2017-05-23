@@ -4,37 +4,53 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
 
+// This class is responsible for parsing stdin and searching vor known
+// patterns / commands. These commands manipulate an ArrayList of
+// Strings. Some of the commands can have arguments (words / Strings).
 public class Main {
     public static void main(String[] args) {
+	// Scanner to read the input.
 	Scanner scan = new Scanner(System.in);
+	// The first word of a line.
 	String command;
+	// The first argument of a given command.
 	String inputOne;
+	// The second argument of a given command.
 	String inputTwo;
+	// This integer is used to keep track of weather the list is
+	// already sorted. (A boolean might have been better).
 	int sorted;
+	// Keep track of whether the input was valid or not.
 	int valid;
+	// A string for temprurarily storing data.
 	String tmp;
+	// This is the ArrayList that the user can manipulate.
 	ArrayList<String> str = new ArrayList<String>();
-	// REGEX
+
+	// Repeat as long as there is an input.
 	while (scan.hasNext()) {
 	    valid = 0;
 	    command = scan.next();
 
+	    // Use regex
 	    if (command.matches("^append")) {
 		valid = 1;
 		if (scan.hasNext()) {
 		    inputOne = scan.next();
+		    // Use regex
 		    if (inputOne.matches("[a-z]*[A-Z]*[0-9]*[a-z]*[A-Z]*[0-9]*")) {
 			// The input is a valid word
 			str.add(inputOne);
 		    } else {
 			System.out.println("INVALID COMMAND");
 		    }
-		} //  else {
-		//     // This should not happen. We are not told how the
-		//     // program should act in this state though...
+		} //   else {
+		//     // This state should never be reached. We were not
+		//     // told how the program should react though...
 		// }
 	    }
-
+	    
+	    // Use regex
 	    if (command.matches("^pop")) {
 		valid = 1;
 		if (str.size() > 0) {
@@ -60,13 +76,12 @@ public class Main {
 			    str.set(Integer.parseInt(inputOne), inputTwo);
 			}
 		    } else {
-			    System.out.println("DOES NOT COMPUTE");
+			System.out.println("DOES NOT COMPUTE");
 		    }
-		} //  else {
-		//     // This should not happen. We are not told how the
-		//     // program should act in this state though...
+		} //   else {
+		//     // This state should never be reached. We were not
+		//     // told how the program should react though...
 		// }
-
 	    }
 
 	    if (command.matches("^remove-first")) {
@@ -103,17 +118,6 @@ public class Main {
 		valid = 1;
 		sorted = 0;
 		Collections.sort(str);
-		// while (sorted == 0) {
-		//     sorted = 1;
-		//     for (int i = 0; i < (str.size() - 1); i++) {
-		// 	// if (str.get(i + 1).length() < str.get(i).length()) {
-		// 	//     sorted = 0;
-		// 	//     tmp = str.get(i);
-		// 	//     str.set(i, str.get(i + 1));
-		// 	//     str.set(i + 1, tmp);
-		// 	// }
-		//     }
-		// }
 	    }
 
 	    if (command.matches("^reverse")) {
