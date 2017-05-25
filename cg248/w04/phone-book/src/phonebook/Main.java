@@ -68,8 +68,8 @@ public class Main {
 	    }
 
 	    // If we have the first and second name and everything is normal, read the phone number.
-	    // if (scan.hasNextInt() && !name) {
-	    if (scan.hasNextInt()) {
+	    if (scan.hasNextInt() && !name) {
+	    // if (scan.hasNextInt()) {
 		number = scan.nextInt();
 	    }
 
@@ -87,9 +87,13 @@ public class Main {
 	    }
 	}
 
+	if (scan.hasNextLine()) {
+	    firstName = scan.nextLine();
+	}
+	
 	// Almost the same thing as above...
 	// while (scan.hasNextLine() || (name == true)) {
-	while (scan.hasNextLine()) {
+	while (scan.hasNextLine() && (n != 0)) {
 	    // problem = false;
 	    // name = false;
 	    // firstName = "";
@@ -97,6 +101,8 @@ public class Main {
 
 	    firstName = scan.nextLine();
 	    sirName = firstName.replace(" ", "");
+
+
 
 	    // if (scan.hasNext()) {
 	    // 	firstName = scan.next();
@@ -115,11 +121,13 @@ public class Main {
 	    // 	}
 	    // }
 
-		if (m.get(sirName) == null) {
-		    System.out.println("Not found: " + firstName);
-		} else {
-		    System.out.println(firstName + " = " + m.get(sirName));
-		}
+	    if (!sirName.matches("[a-z]*[A-Z]*[a-z]*[A-Z]*")) {
+		System.out.println("Not a name: " + firstName);
+	    } else if (m.get(sirName) == null) {
+		System.out.println("Not found: " + firstName);
+	    } else {
+		System.out.println(firstName + " = " + m.get(sirName));
+	    }
 
 	    // if (!problem) {
 	    // 	if (m.get(firstName + sirName) == null) {
