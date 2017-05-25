@@ -1,8 +1,137 @@
 package phonebook;
 
+import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-	
+	Scanner scan = new Scanner(System.in);
+
+	int n = scan.nextInt();
+
+	String firstName = "";
+	String sirName = "";
+	int number = -1;
+
+	// Keep track of problems and names
+	boolean problem;
+	boolean name = false;
+
+	Map<String, Integer> m = new HashMap<String, Integer>();
+
+	for (int i = 0; i < n; i++) {
+	    problem = false;
+	    name = false;
+	    number = -1;
+	    firstName = "";
+
+	    // Read the first name
+	    if (scan.hasNext()) {
+		firstName = scan.next();
+		if (!firstName.matches("[a-z]*[A-Z]*[a-z]*[A-Z]*")) {
+		    System.out.println("Not a name: " + firstName);
+		    // We have a problem and we don't have a first name
+		    problem = true;
+		    name = true;
+		}
+	    }
+
+	    // Read the second name. If the second name doesn't exist
+	    // check if the input is an integer. If it's an integer,
+	    // assume it's the corresponding phone number
+	    if (scan.hasNext()) {
+		sirName = scan.next();
+
+		if (sirName.matches("[0-9]*")) {
+		    number = Integer.parseInt(sirName.trim());
+		    sirName = "";
+		    if (m.get(firstName + sirName) == null) {
+			m.put(firstName + sirName, number);
+		    } else {
+			m.put(firstName + sirName, number);
+			System.out.println("Warning: overwriting entry for: " + firstName + sirName);
+		    }
+		    // There is no sir name. This doesn't have to be a problem.
+		    problem = true;
+		    name = true;
+		} else if (!sirName.matches("[a-z]*[A-Z]*[a-z]*[A-Z]*")) {
+		    System.out.println("Not a name: " + sirName);
+		    // We have atleast one name and there is no problem.
+		    problem = true;
+		    name = true;
+		}
+
+	    } else {
+		if (!name) {
+		    System.out.println("Please enter a name!");
+		}
+	    }
+
+	    // If we have the first and second name and everything is normal, read the phone number.
+	    // if (scan.hasNextInt() && !name) {
+	    if (scan.hasNextInt()) {
+		number = scan.nextInt();
+	    }
+
+	    // If the phone number is still not registered, something is seriously wrong...
+	    if (number == -1) {
+		System.out.println("Error: cannot parse phone book.");
+		scan.nextLine();
+	    } else if (!problem) {
+		if (m.get(firstName + sirName) == null) {
+		    m.put(firstName + sirName, number);
+		} else {
+		    m.put(firstName + sirName, number);
+		    System.out.println("Warning: overwriting entry for: " + firstName + " " + sirName);
+		}
+	    }
+	}
+
+	// Almost the same thing as above...
+	// while (scan.hasNextLine() || (name == true)) {
+	while (scan.hasNextLine()) {
+	    // problem = false;
+	    // name = false;
+	    // firstName = "";
+	    // sirName = "";
+
+	    firstName = scan.nextLine();
+	    sirName = firstName.replace(" ", "");
+
+	    // if (scan.hasNext()) {
+	    // 	firstName = scan.next();
+	    // 	if (!firstName.matches("[a-z]*[A-Z]*[a-z]*[A-Z]*")) {
+	    // 	    System.out.println("Not a name: " + firstName);
+	    // 	    problem = true;
+	    // 	    name = true;
+	    // 	}
+	    // }
+
+	    // if (scan.hasNext() && !(scan.next().matches("$"))) {
+	    // 	sirName = scan.next();
+	    // 	if (!sirName.matches("[a-z]*[A-Z]*[a-z]*[A-Z]*")) {
+	    // 	    System.out.println("Not a name: " + sirName);
+	    // 	    name = true;
+	    // 	}
+	    // }
+
+		if (m.get(sirName) == null) {
+		    System.out.println("Not found: " + firstName);
+		} else {
+		    System.out.println(firstName + " = " + m.get(sirName));
+		}
+
+	    // if (!problem) {
+	    // 	if (m.get(firstName + sirName) == null) {
+	    // 	    System.out.println("Not found: " + firstName + " " + sirName);
+	    // 	} else if (firstName == "") {
+	    // 	    System.out.println(sirName + " = " + m.get(firstName + sirName));
+	    // 	} else if (sirName == ""){
+	    // 	    System.out.println(firstName + " = " + m.get(firstName + sirName));
+	    // 	} else {
+	    // 	    System.out.println(firstName + " " + sirName + " = " + m.get(firstName + sirName));
+	    // 	}
+	    // }
+	}
     }
 }
