@@ -1,145 +1,159 @@
 package phonebook;
 
-import java.util.Scanner;
 import java.util.*;
+import java.io.*;
 
+// Collect the users input in a hash map to create a "phone
+// book". Later return the values uppon request.
 public class Main {
     public static void main(String[] args) {
 	Scanner scan = new Scanner(System.in);
 
+	InputStreamReader r = new InputStreamReader(System.in);
+	BufferedReader br = new BufferedReader(r);
+
 	int n = scan.nextInt();
-
-	String firstName = "";
-	String sirName = "";
-	int number = -1;
-
-	// Keep track of problems and names
-	boolean problem;
-	boolean name = false;
-
-	Map<String, Integer> m = new HashMap<String, Integer>();
+	String withSpaces = "";
+	String withoutSpaces = "";
+	String tmp = "";
+	int sw = 0;
+	
+	Map<String, String> map = new HashMap<String, String>();
 
 	for (int i = 0; i < n; i++) {
-	    problem = false;
-	    name = false;
-	    number = -1;
-	    firstName = "";
 
-	    // Read the first name
-	    if (scan.hasNext()) {
-		firstName = scan.next();
-		if (!firstName.matches("[a-z]*[A-Z]*[a-z]*[A-Z]*")) {
-		    System.out.println("Not a name: " + firstName);
-		    // We have a problem and we don't have a first name
-		    problem = true;
-		    name = true;
-		}
-	    }
+	    withSpaces = "";
+	    withoutSpaces = "";
+	    tmp = "";
 
-	    // Read the second name. If the second name doesn't exist
-	    // check if the input is an integer. If it's an integer,
-	    // assume it's the corresponding phone number
-	    if (scan.hasNext()) {
-		sirName = scan.next();
+	    // Read up to three words and no more than that.
+	    for (int m = 0; m < 4; m++) {
+		tmp = scan.next();
 
-		if (sirName.matches("[0-9]*")) {
-		    number = Integer.parseInt(sirName.trim());
-		    sirName = "";
-		    if (m.get(firstName + sirName) == null) {
-			m.put(firstName + sirName, number);
-		    } else {
-			m.put(firstName + sirName, number);
-			System.out.println("Warning: overwriting entry for: " + firstName + sirName);
+		if (tmp.matches("[a-z]*[A-Z]*[a-z]*[A-Z]*")) {
+		    // It's a name
+		    if (m == 0) {
+			withSpaces = tmp;
+			withoutSpaces = tmp;
 		    }
-		    // There is no sir name. This doesn't have to be a problem.
-		    problem = true;
-		    name = true;
-		} else if (!sirName.matches("[a-z]*[A-Z]*[a-z]*[A-Z]*")) {
-		    System.out.println("Not a name: " + sirName);
-		    // We have atleast one name and there is no problem.
-		    problem = true;
-		    name = true;
-		}
 
-	    } else {
-		if (!name) {
-		    System.out.println("Please enter a name!");
-		}
-	    }
+		    if (m == 1) {
+			withSpaces += " " + tmp;
+			withoutSpaces += tmp;
+		    }
 
-	    // If we have the first and second name and everything is normal, read the phone number.
-	    if (scan.hasNextInt() && !name) {
-	    // if (scan.hasNextInt()) {
-		number = scan.nextInt();
-	    }
+		    if (m == 2) {
+			System.out.println("Error: cannot parse phone book.");
+			sw = 1;
+			break;
+		    }
 
-	    // If the phone number is still not registered, something is seriously wrong...
-	    if (number == -1) {
-		System.out.println("Error: cannot parse phone book.");
-		scan.nextLine();
-	    } else if (!problem) {
-		if (m.get(firstName + sirName) == null) {
-		    m.put(firstName + sirName, number);
+		} else if (tmp.matches("[0-9]*")) {
+		    // It's a number
+		    if (m == 0) {
+			System.out.println("Not a name: " + tmp);
+			break;
+		    }
+
+		    if (m == 1) {
+			if (map.get(withoutSpaces) != null) {
+			    System.out.println("Warning: overwriting entry for: " + withSpaces);
+			}
+			map.put(withoutSpaces, tmp);
+			break;
+		    }
+
+		    if (m == 2) {
+			if (map.get(withoutSpaces) != null) {
+			    System.out.println("Warning: overwriting entry for: " + withSpaces);
+			}
+			map.put(withoutSpaces, tmp);
+			break;
+		    }
+		    
 		} else {
-		    m.put(firstName + sirName, number);
-		    System.out.println("Warning: overwriting entry for: " + firstName + " " + sirName);
+		    // It's neither a name nor a number.
+		    System.out.println("Not a name: " + tmp);
+		    break;
 		}
 	    }
 	}
+	    
 
-	if (scan.hasNextLine()) {
-	    firstName = scan.nextLine();
-	}
+	// withoutSpaces = withSpaces = "";
+	// sw = 1;
+	// sw = 0;
+	// while (scan.hasNextLine() && scan.nextLine().isEmpty()) {
+	//     withSpaces = scan.nextLine();
+	// }
+	//     System.out.println("Ping");
+	//      withSpaces = scan.nextLine();
+	// }
 	
 	// Almost the same thing as above...
-	// while (scan.hasNextLine() || (name == true)) {
-	while (scan.hasNextLine() && (n != 0)) {
-	    // problem = false;
-	    // name = false;
-	    // firstName = "";
-	    // sirName = "";
+	// while (scan.hasNext()) {
+	while (scan.hasNext() && (n != 0)) {
+	    
+	    // try {
 
-	    firstName = scan.nextLine();
-	    sirName = firstName.replace(" ", "");
-
-
-
-	    // if (scan.hasNext()) {
-	    // 	firstName = scan.next();
-	    // 	if (!firstName.matches("[a-z]*[A-Z]*[a-z]*[A-Z]*")) {
-	    // 	    System.out.println("Not a name: " + firstName);
-	    // 	    problem = true;
-	    // 	    name = true;
+	    // 	while (br.readLine() == null) {
+	    // 	    tmp = br.readLine();
 	    // 	}
+	    // } catch (IOException e) {
+	    // 	System.out.println("IOEXception e");
+	    // 	break;
 	    // }
 
-	    // if (scan.hasNext() && !(scan.next().matches("$"))) {
-	    // 	sirName = scan.next();
-	    // 	if (!sirName.matches("[a-z]*[A-Z]*[a-z]*[A-Z]*")) {
-	    // 	    System.out.println("Not a name: " + sirName);
-	    // 	    name = true;
-	    // 	}
+	    // for (int m = 0; m < 3; m++) {
+	    // if (scan.hasNextLine()) {
+	    try {
+		tmp = br.readLine();
+	    } catch (IOException e) {
+		System.out.println("IOEXception e");
+		break;
+	    }
+	    // } else {
+	    // I have to do this, because the test case doesn't
+		// have a new line after Harry!
+	    // 	tmp = scan.next();
+	    // }
+	    // else {
+	    // 	break;
 	    // }
 
-	    if (!sirName.matches("[a-z]*[A-Z]*[a-z]*[A-Z]*")) {
-		System.out.println("Not a name: " + firstName);
-	    } else if (m.get(sirName) == null) {
-		System.out.println("Not found: " + firstName);
-	    } else {
-		System.out.println(firstName + " = " + m.get(sirName));
+	    if (tmp.replace(" ", "").matches("[a-z]*[A-Z]*[a-z]*[A-Z]*[a-z]*[A-Z]*[a-z]*[A-Z]*")) {
+		// It's a name
+		// if (m == 0) {
+		    withSpaces = tmp;
+		    withoutSpaces = tmp.replace(" ", "");
+		    // if (map.get(withoutSpaces) != null) {
+		    // 	break;
+		    // }
+		// }
+
+		// if ((m == 1) && !(tmp.matches("$.*"))) {
+		//     withSpaces += " " + tmp;
+		//     withoutSpaces += tmp;
+		//     break;
+		// }
+
+	    } else if (sw == 0) {
+		// It's neither a name nor a number.
+		System.out.println("Not a name: " + tmp);
+		sw = 1;
+		// break;
 	    }
 
-	    // if (!problem) {
-	    // 	if (m.get(firstName + sirName) == null) {
-	    // 	    System.out.println("Not found: " + firstName + " " + sirName);
-	    // 	} else if (firstName == "") {
-	    // 	    System.out.println(sirName + " = " + m.get(firstName + sirName));
-	    // 	} else if (sirName == ""){
-	    // 	    System.out.println(firstName + " = " + m.get(firstName + sirName));
-	    // 	} else {
-	    // 	    System.out.println(firstName + " " + sirName + " = " + m.get(firstName + sirName));
-	    // 	}
 	    // }
+
+	    // withoutSpaces.matches("[a-z]*[A-Z]*[a-z]*[A-Z]*[a-z]*[A-Z]*[a-z]*[A-Z]*")
+
+	    if (map.get(withoutSpaces) != null) {
+		System.out.println(withSpaces + " = " + map.get(withoutSpaces));
+	    } else if (sw == 0) {
+		System.out.println("Not found: " + withSpaces);
+		sw = 0;
+	    }
 	}
     }
 }
