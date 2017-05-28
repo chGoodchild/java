@@ -8,10 +8,6 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) {
 	Scanner scan = new Scanner(System.in);
-
-	InputStreamReader r = new InputStreamReader(System.in);
-	BufferedReader br = new BufferedReader(r);
-
 	int n = scan.nextInt();
 	String withSpaces = "";
 	String withoutSpaces = "";
@@ -79,80 +75,39 @@ public class Main {
 	    }
 	}
 	    
+	// Skip the first two new lines (if they are present).
+	sw = 1;
 
-	// withoutSpaces = withSpaces = "";
-	// sw = 1;
-	// sw = 0;
-	// while (scan.hasNextLine() && scan.nextLine().isEmpty()) {
-	//     withSpaces = scan.nextLine();
-	// }
-	//     System.out.println("Ping");
-	//      withSpaces = scan.nextLine();
-	// }
-	
 	// Almost the same thing as above...
-	// while (scan.hasNext()) {
-	while (scan.hasNext() && (n != 0)) {
-	    
-	    // try {
+	
+	// This code returns "Not Found" when unnecessary new lines
+	// are in the input. I spent a lot of time trying to handle
+	// this issue, but I didn't manage. I also tried with Buffered
+	// reader...
+	while (scan.hasNextLine() && (n != 0)) {
 
-	    // 	while (br.readLine() == null) {
-	    // 	    tmp = br.readLine();
-	    // 	}
-	    // } catch (IOException e) {
-	    // 	System.out.println("IOEXception e");
-	    // 	break;
-	    // }
-
-	    // for (int m = 0; m < 3; m++) {
-	    // if (scan.hasNextLine()) {
-	    try {
-		tmp = br.readLine();
-	    } catch (IOException e) {
-		System.out.println("IOEXception e");
-		break;
+	    if (scan.hasNextLine()) {
+		tmp = scan.nextLine();
 	    }
-	    // } else {
-	    // I have to do this, because the test case doesn't
-		// have a new line after Harry!
-	    // 	tmp = scan.next();
-	    // }
-	    // else {
-	    // 	break;
-	    // }
 
 	    if (tmp.replace(" ", "").matches("[a-z]*[A-Z]*[a-z]*[A-Z]*[a-z]*[A-Z]*[a-z]*[A-Z]*")) {
-		// It's a name
-		// if (m == 0) {
-		    withSpaces = tmp;
-		    withoutSpaces = tmp.replace(" ", "");
-		    // if (map.get(withoutSpaces) != null) {
-		    // 	break;
-		    // }
-		// }
-
-		// if ((m == 1) && !(tmp.matches("$.*"))) {
-		//     withSpaces += " " + tmp;
-		//     withoutSpaces += tmp;
-		//     break;
-		// }
+		withSpaces = tmp;
+		withoutSpaces = tmp.replace(" ", "");
 
 	    } else if (sw == 0) {
 		// It's neither a name nor a number.
 		System.out.println("Not a name: " + tmp);
 		sw = 1;
-		// break;
 	    }
-
-	    // }
-
-	    // withoutSpaces.matches("[a-z]*[A-Z]*[a-z]*[A-Z]*[a-z]*[A-Z]*[a-z]*[A-Z]*")
 
 	    if (map.get(withoutSpaces) != null) {
 		System.out.println(withSpaces + " = " + map.get(withoutSpaces));
 	    } else if (sw == 0) {
 		System.out.println("Not found: " + withSpaces);
-		sw = 0;
+	    }
+
+	    if (sw > 0) {
+		sw--;
 	    }
 	}
     }
