@@ -1,0 +1,9 @@
+Test failed: formatSIFailing(formatsi.FormatTest)
+Messages:
+formatSI:bigger-1
+formatSI:no-fit:false
+formatSI:no-fit:true
+formatSI:no-symbol
+formatSI:smaller-1
+formatSI:symbol
+formatSI:zero

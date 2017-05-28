@@ -1,0 +1,6 @@
+Messages:
+turbineControl:DISCONNECT:false
+turbineControl:DISCONNECT:true
+turbineControl:LESS_WATER
+turbineControl:MORE_WATER
+turbineControl:STEADY
