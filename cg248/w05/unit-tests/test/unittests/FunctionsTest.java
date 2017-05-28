@@ -1,10 +1,14 @@
-package unittests;
+npackage unittests;
 
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-
+/** 
+ * Test the functionality of turbine.turbine control. All possible
+ * scenarios are covered by the test...
+ * 
+ */
 public class FunctionsTest {
     @Test
     public void turbineControl() throws Exception {
