@@ -20,7 +20,6 @@ public class MyTestCases {
         ingredients.put(new Food("SoylentGreen", 0.3, 0.3, 0.3), 2000.0);
 
         Meal nano = new Meal("nanoFood", ingredients);
-        assertEquals(3400.0, nano.getCalorificValue(), 0.0001);
         assertEquals("nanoFood", nano.name);
         assertEquals(ingredients, nano.ingredients);
         assertEquals("nanoFood" + ingredients.toString(), nano.toString());
@@ -41,10 +40,10 @@ public class MyTestCases {
         assertEquals(0.3, soylent.carbohydrateShare, 0.0001);
         assertEquals(0.3, soylent.fatShare, 0.0001);
         assertEquals(0.3, soylent.proteinShare, 0.0001);
-        assertEquals("nanoFood0.30.30.3", soylent.toString(), 0.0001);
-        assertEquals("nanoFood", soylent.getName());
+        assertEquals("SoylentGreen0.30.30.3", soylent.toString());
+        assertEquals("SoylentGreen", soylent.getName());
         assertEquals(17 * 0.3 + 17 * 0.3 + 37 * 0.3, soylent.relativeEnergyDensity(), 0.0001);
-        assertEquals(Objects.hash("SoylentGreen", 0.3, 0.3, 0.4), soylent.hashCode(), 0.0001);
+        assertEquals(Objects.hash("SoylentGreen", 0.3, 0.3, 0.3), soylent.hashCode(), 0.0001);
         assertEquals(true, soylent.equals(soylent));
         assertEquals(false, soylent.equals(fakeLent));
     }
