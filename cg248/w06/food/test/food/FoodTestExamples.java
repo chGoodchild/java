@@ -12,7 +12,8 @@ import static org.junit.Assert.*;
  */
 public class FoodTestExamples {
     /**
-     * Add different types of food to the meal in various quantities. Then check if the returned calorific value is
+     * Add different types of food to the meal in various
+     * quantities. Then check if the returned calorific value is
      * correct.
      */
     @Test
@@ -27,8 +28,10 @@ public class FoodTestExamples {
     }
 
     /**
-     * Create an instance of Food, which has 100% carbohydrates, 100% fat and 100% protein. Such an instantiation is
-     * forbidden, as the nutrients must add up to maximum 100%, thus we expect an IllegalArgumentException.
+     * Create an instance of Food, which has 100% carbohydrates, 100%
+     * fat and 100% protein. Such an instantiation is forbidden, as
+     * the nutrients must add up to maximum 100%, thus we expect an
+     * IllegalArgumentException.
      * @throws Throwable : IllegalArgumentException
      */
     @Test(expected = IllegalArgumentException.class)

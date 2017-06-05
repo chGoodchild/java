@@ -19,7 +19,8 @@ public class Meal {
 	/**
 	 * Initialize this instance of Meal.
 	 * @param name : String : The name of this Instance.
-	 * @param ingredients : Contains the ingredients their quantities for this meal.
+	 * @param ingredients : Contains the ingredients their
+	 * quantities for this meal.
 	 */
 	public Meal(String name, Map<Food, Double>ingredients) {
 		this.name = name;
@@ -27,28 +28,32 @@ public class Meal {
 	}
 
 	/**
-	 * @return Return the contents of this meal (object) in the form of a String.
+	 * @return Return the contents of this meal (object) in the
+	 * form of a String.
 	 */
 	public String toString() {
 		return this.name + this.ingredients.toString();
 	}
 
 	/**
-	 * @return Return the name of this meal (object) in the form of a String.
+	 * @return Return the name of this meal (object) in the form
+	 * of a String.
 	 */
 	public String getName() {
 		return this.name;
 	}
 
 	/**
-	 * @return Return the ingredients of this meal (object) as a Map.
+	 * @return Return the ingredients of this meal (object) as a
+	 * Map.
 	 */
 	public Map<Food, Double> getIngredients() {
 		return this.ingredients;
 	}
 
 	/**
-	 * @return Return the calorific value of this meal (object) as a double.
+	 * @return Return the calorific value of this meal (object) as
+	 * a double.
 	 */
 	public double getCalorificValue() {
 		double calorificValue = 0;

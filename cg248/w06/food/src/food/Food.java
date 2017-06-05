@@ -3,8 +3,9 @@ package food;
 import java.util.Objects;
 
 /**
- * A class that defines the properties of food. Each instance of this class has a name, a carbohydrate share, a fat
- * share and a protein share.
+ * A class that defines the properties of food. Each instance of this
+ * class has a name, a carbohydrate share, a fat share and a protein
+ * share.
  */
 public class Food {
 
@@ -14,8 +15,10 @@ public class Food {
     public double proteinShare;
 
     /**
-     * The constructor of food. The properties of an instance are initialized in the constructor, as long as the total
-     * share of the three nutrients doesn't exceed 1 and none of the nutrients have a negative share.
+     * The constructor of food. The properties of an instance are
+     * initialized in the constructor, as long as the total share of
+     * the three nutrients doesn't exceed 1 and none of the nutrients
+     * have a negative share.
      * @param name  : String : Name of this instance.
      * @param carbohydrateShare : double : The carbohydrate share.
      * @param fatShare : double : The fat share.
@@ -67,7 +70,8 @@ public class Food {
 
     /**
      * @param r : An instance of this class.
-     * @return Return true if the instance in the argument of the function has the same contents as this instance.
+     * @return Return true if the instance in the argument of the
+     * function has the same contents as this instance.
      */
     public boolean equals(Food r) {
         return (r.name.equals(this.name) &&

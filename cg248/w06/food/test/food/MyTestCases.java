@@ -49,8 +49,10 @@ public class MyTestCases {
     }
 
     /**
-     * Create an instance of Food, which has 100% carbohydrates, 100% fat and 100% protein. Such an instantiation is
-     * forbidden, as the nutrients must add up to maximum 100%, thus we expect an IllegalArgumentException.
+     * Create an instance of Food, which has 100% carbohydrates, 100%
+     * fat and 100% protein. Such an instantiation is forbidden, as
+     * the nutrients must add up to maximum 100%, thus we expect an
+     * IllegalArgumentException.
      * @throws Throwable : IllegalArgumentException
      */
     @Test(expected = IllegalArgumentException.class)
@@ -59,7 +61,8 @@ public class MyTestCases {
     }
 
     /**
-     * Create another illegal instance of food and make sure it returns an IllegalArgumentException.
+     * Create another illegal instance of food and make sure it
+     * returns an IllegalArgumentException.
      * @throws Throwable : IllegalArgumentException
      */
     @Test(expected = IllegalArgumentException.class)
