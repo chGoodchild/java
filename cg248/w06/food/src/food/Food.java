@@ -65,18 +65,17 @@ public class Food {
         return Objects.hash(name, carbohydrateShare, fatShare, proteinShare);
     }
 
-    // @Override public boolean equals(Food r) {
-    // Error:(70, 5) java: method does not override or implement a method from a supertype
-
     /**
      * @param r : An instance of this class.
      * @return Return true if the instance in the argument of the
      * function has the same contents as this instance.
      */
-    public boolean equals(Food r) {
-        return (r.name.equals(this.name) &&
-                (r.carbohydrateShare == this.carbohydrateShare) &&
-                (r.fatShare == this.fatShare) &&
-                (r.proteinShare == this.proteinShare));
+    @Override public boolean equals(Object r) {
+        if (r.getClass() == Food.class) {
+            Food localR = (Food) r;
+            return (this.name.equals(localR.name));
+        } else {
+            return false;
+        }
     }
 }

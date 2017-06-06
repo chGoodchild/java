@@ -1,11 +1,9 @@
 package food;
 
 import java.util.Map;
-import java.util.Iterator;
 
 /**
  * This class defines a meal, which has a name and ingredients.
- *
  */
 public class Meal {
 

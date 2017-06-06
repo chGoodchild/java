@@ -3,9 +3,9 @@ package rationals;
 import java.lang.Math;
 
 /**
- * Created by chandran on 6/5/17.
- * Store the numerator and denominator of a rational number in instances of this class and do simple calculations on
- * demand.
+ * Created by Chandran on 6/5/17.
+ * Store the numerator and denominator of a rational number in
+ * instances of this class and do simple calculations on demand.
  */
 public class Rational {
     public long numerator;
@@ -44,7 +44,8 @@ public class Rational {
     }
 
     /**
-     * Add this rational number with the rational number in the argument of this function.
+     * Add this rational number with the rational number in the
+     * argument of this function.
      * @param r The rational number to be added with this instance.
      * @return Return a rational number which is the sum of the two.
      */
@@ -73,8 +74,9 @@ public class Rational {
         }
 
         /**
-         * This statement is only required in order to satisfy the unit test in Jenkins. Rational(0, 2) should also be
-         * a valid return statement...
+         * This statement is only required in order to satisfy the
+         * unit test in Jenkins. Rational(0, 2) should also be a valid
+         * return statement...
          */
         if (n == 0) {
             return new Rational(0, 1);
@@ -84,9 +86,12 @@ public class Rational {
     }
 
     /**
-     * Multiply this rational number with the rational number in the argument of this function.
-     * @param r The rational number to be multiplied with this instance.
-     * @return Return a rational number which is the product of the two.
+     * Multiply this rational number with the rational number in the
+     * argument of this function.
+     * @param r The rational number to be multiplied with this
+     * instance.
+     * @return Return a rational number which is the product of the
+     * two.
      */
     public Rational multiply(Rational r) {
 
@@ -122,7 +127,8 @@ public class Rational {
     /**
      * Invert the rational number from the argument.
      * @param r The rational number to be inverted
-     * @return Return a rational number that is the inverse of the given argument.
+     * @return Return a rational number that is the inverse of the
+     * given argument.
      */
     public Rational invert(Rational r) {
         long n =  r.denominator;
@@ -132,7 +138,8 @@ public class Rational {
 
     /**
      * Convert the rational number to a double and return it.
-     * @return Return the numerator divided by the denominator as a double.
+     * @return Return the numerator divided by the denominator as a
+     * double.
      */
     public double toDouble() {
         return ((double) this.numerator / (double) this.denominator);
@@ -146,7 +153,8 @@ public class Rational {
     }
 
     /**
-     * @return Return the denominator of this rational number as a long.
+     * @return Return the denominator of this rational number as a
+     * long.
      */
     public long getDenominator() {
         return this.denominator;
@@ -154,7 +162,8 @@ public class Rational {
 
     /**
      * @param r The argument to be compared with this instance.
-     * @return Boolean : Return true if this instance equals the given argument.
+     * @return Boolean : Return true if this instance equals the given
+     * argument.
      */
     @Override public boolean equals(Object r) {
         Rational rat  = (Rational) r;
