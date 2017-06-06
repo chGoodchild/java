@@ -1,15 +1,22 @@
-Kurze Frage zum Feedback von Blatt01:
-
-Ziemlich umständlich gelöst, ich rate Dir die Musterlösung anzuschauen
-Wenn in der Aufgabenstellung "floats" steht bitte auch mit floats
-arbeiten
+Bitte in Zukunft javadoc ausreichend benutzen und auf die korrekte Einrückung achten (vor allem in if's und Kommentaren)
 
 
-----------------
 
-Wo finde ich die Musterlösung? In SVN kann ich unter /root/ nur meine
-eigenes Verzeichniss sehen. Werden die Musterlösungen noch hinzugefügt
-oder sind sie wo anders abgelegt?
+Validation results for cg248/w03
+=====================================
 
-Danke
-Chandran
+----------- Exercise: line-numbers
+Running 26 testcases: ALL PASSED
+
+
+----------- Exercise: second-highest
+Running 12 testcases: ALL PASSED
+
+
+----------- Exercise: maximum-hourglass
+Running 13 testcases: ALL PASSED
+
+
+----------- Exercise: caesar-cipher
+Running 20 testcases: ALL PASSED
+

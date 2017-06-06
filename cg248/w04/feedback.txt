@@ -1,0 +1,48 @@
+Klassen bitte korrekt mit javadoc kommentieren
+
+
+Punkte: 4/8
+
+
+Validation results for cg248/w04
+=====================================
+
+----------- Exercise: list-operations
+Running 13 testcases: ALL PASSED
+
+
+----------- Exercise: anagrams
+Running 22 testcases: ALL PASSED
+
+
+----------- Exercise: phone-book
+Running 12 testcases: FAILED at test phonebook-02-generated
+Input was:<8
+Robert Defrancisco
+ 6 Ramon 
+072281383 Robert Gorby 
+16
+Shakira Amato  8212971 Berneice 5221 Tamekia 
+
+560059599311  Celine Harkleroad
+
+74770   Arleen 35578215219
+ 
+
+Robert Gorby
+Shakira
+Celine Harkleroad
+Robert Gorby
+Libbie Balog
+Celine Harkleroad
+Norma
+Jennine Walko
+> expected:<[]Robert Gorby = 16
+No...> but was:<[Not found: 
+]Robert Gorby = 16
+No...>
+
+
+
+----------- Exercise: unique-chars
+NO SUBMISSION FOUND (../cg248/w04/unique-chars/src does not exist)
