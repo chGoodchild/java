@@ -2,7 +2,6 @@ package blockworld;
 
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -25,5 +24,4 @@ public class BlockWorldExampleTest {
     public void testFailingBlockConstruction() {
         new Block(-1, 0, 1, 'x');
     }
-
 }
