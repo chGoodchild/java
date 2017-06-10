@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Created by chandran on 6/5/17.
+ * Created by Chandran Goodchild on 6/5/17.
  * Test all the methods that I wrote.
  */
 public class MyTest {
@@ -59,4 +59,10 @@ public class MyTest {
         Rational r2 = new Rational(1, 2);
         assertEquals(true, r2.equals(r2));
     }
+
+//    @Test
+//    public void hashCode() {
+//        Rational r2 = new Rational(1, 2);
+//        assertEquals(1, r2.hashCode());
+//    }
 }

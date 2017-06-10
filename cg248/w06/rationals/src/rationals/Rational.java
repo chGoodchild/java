@@ -1,14 +1,20 @@
 package rationals;
 
-import java.lang.Math;
+import java.util.Arrays;
 
 /**
- * Created by Chandran on 6/5/17.
+ * Created by Chandran Goodchild on 6/5/17.
  * Store the numerator and denominator of a rational number in
  * instances of this class and do simple calculations on demand.
  */
 public class Rational {
+    /**
+     * Numerator of the rational number.
+     */
     public long numerator;
+    /**
+     * Denominator of the rational number.
+     */
     public long denominator;
 
     /**
@@ -159,6 +165,16 @@ public class Rational {
     public long getDenominator() {
         return this.denominator;
     }
+
+//    /**
+//     * Generate a unique hash code for different instances of this class.
+//     *
+//     * @return Return a unique hash code for this instance.
+//     */
+//    @Override
+//    public int hashCode() {
+//       return Arrays.hashCode(new Object[]{this.numerator, this.denominator});
+//    }
 
     /**
      * @param r The argument to be compared with this instance.

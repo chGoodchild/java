@@ -99,6 +99,18 @@ public class BlockWorld {
                     if (this.world.get(m).get(n).get(o).y  < 0) {
                         this.world.get(m).get(n).get(o).y = 0;
                     }
+
+                    if (this.world.get(m).get(n).get(o).y  >= this.height) {
+                        this.world.get(m).get(n).get(o).y = this.height - 1;
+                    }
+
+                    if (this.world.get(m).get(n).get(o).x  < 0) {
+                        this.world.get(m).get(n).get(o).x = 0;
+                    }
+
+                    if (this.world.get(m).get(n).get(o).x  >= this.width) {
+                        this.world.get(m).get(n).get(o).x = this.width - 1;
+                    }
                 }
             }
         }
@@ -110,19 +122,51 @@ public class BlockWorld {
      */
     public void sort() {
 
-        int newX, newY;
+        int newX, newY, size;
         Block tmp;
 
         for (int m = 0; m < this.width; m++) {
             for (int n = 0; n < this.height; n++) {
-                for (int o = 0; o < this.world.get(m).get(n).size(); o++) {
+                size = this.world.get(m).get(n).size();
+                for (int o = 0; o < size; o++) {
                     tmp = this.world.get(m).get(n).get(o);
+
+                    if (tmp.x < 0) {
+                        tmp.x = this.world.get(m).get(n).get(o).x = 0;
+                    }
+
+                    if (tmp.x >= this.width) {
+                        tmp.x = this.world.get(m).get(n).get(o).x = this.width - 1;
+                    }
+
+                    if (tmp.y < 0) {
+                        tmp.y = this.world.get(m).get(n).get(o).y = 0;
+                    }
+
+                    if (tmp.y >= this.height) {
+                        tmp.y = this.world.get(m).get(n).get(o).y = this.height - 1;
+                    }
+
                     newX = tmp.x;
                     newY = tmp.y;
 
                     if (newX != m || newY != n) {
-                        this.world.get(m).get(n).remove(o);
-                        this.world.get(newX).get(newY).add(tmp);
+                        System.out.println(m);
+                        System.out.println(n);
+                        System.out.println(newX);
+                        System.out.println(newY);
+                        System.out.println(this.width);
+                        System.out.println(this.height);
+
+                        if (newX <= this.width - 1 && newY <= this.height - 1) {
+                            System.out.println("Start");
+                            this.world.get(m).get(n).remove(o);
+                            System.out.println("PING");
+                            this.world.get(newX).get(newY).add(tmp);
+                            System.out.println("PING");
+                        } else {
+                            throw new IllegalStateException();
+                        }
                     }
                 }
             }
