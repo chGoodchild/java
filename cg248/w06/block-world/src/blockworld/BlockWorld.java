@@ -151,19 +151,19 @@ public class BlockWorld {
                     newY = tmp.y;
 
                     if (newX != m || newY != n) {
-                        System.out.println(m);
-                        System.out.println(n);
-                        System.out.println(newX);
-                        System.out.println(newY);
-                        System.out.println(this.width);
-                        System.out.println(this.height);
+//                        System.out.println(m);
+//                        System.out.println(n);
+//                        System.out.println(newX);
+//                        System.out.println(newY);
+//                        System.out.println(this.width);
+//                        System.out.println(this.height);
 
                         if (newX <= this.width - 1 && newY <= this.height - 1) {
-                            System.out.println("Start");
+//                            System.out.println("Start");
                             this.world.get(m).get(n).remove(o);
-                            System.out.println("PING");
+//                            System.out.println("PING");
                             this.world.get(newX).get(newY).add(tmp);
-                            System.out.println("PING");
+//                            System.out.println("PING");
                         } else {
                             throw new IllegalStateException();
                         }

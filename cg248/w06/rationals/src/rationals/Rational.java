@@ -1,7 +1,5 @@
 package rationals;
 
-import java.util.Arrays;
-
 /**
  * Created by Chandran Goodchild on 6/5/17.
  * Store the numerator and denominator of a rational number in
@@ -92,6 +90,13 @@ public class Rational {
     }
 
     /**
+     * @return String with the contents of the numerator and denominator of this object.
+     */
+    public String toString() {
+        return "numerator " + numerator + " denominator " + denominator;
+    }
+
+    /**
      * Multiply this rational number with the rational number in the
      * argument of this function.
      * @param r The rational number to be multiplied with this
@@ -166,15 +171,6 @@ public class Rational {
         return this.denominator;
     }
 
-//    /**
-//     * Generate a unique hash code for different instances of this class.
-//     *
-//     * @return Return a unique hash code for this instance.
-//     */
-//    @Override
-//    public int hashCode() {
-//       return Arrays.hashCode(new Object[]{this.numerator, this.denominator});
-//    }
 
     /**
      * @param r The argument to be compared with this instance.
@@ -182,7 +178,11 @@ public class Rational {
      * argument.
      */
     @Override public boolean equals(Object r) {
-        Rational rat  = (Rational) r;
-        return (this.numerator == rat.numerator && this.denominator == rat.denominator);
+        if (r instanceof Rational) {
+            Rational rat = (Rational) r;
+            return (this.numerator == rat.numerator && this.denominator == rat.denominator);
+        } else {
+            return false;
+        }
     }
 }
