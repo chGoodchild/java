@@ -7,6 +7,8 @@ import static unittests.Util.log;
  */
 public class Functions {
 
+
+
     /**
      * Returns the turbine command that is appropiate for the given frequency.
      *
@@ -30,4 +32,6 @@ public class Functions {
         }
         return res;
     }
+
+
 }
