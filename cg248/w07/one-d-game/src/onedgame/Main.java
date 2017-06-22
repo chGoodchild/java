@@ -1,6 +1,5 @@
 package onedgame;
 
-
 import java.util.ArrayList;
 
 /**
@@ -13,7 +12,11 @@ import java.util.ArrayList;
 public class Main {
 
     public static boolean isWinnable(int m, boolean[] game) {
-        if (game[0] || game.length < 1 || m <= 0) {
+        if (game.length < 1 || m <= 0) {
+            throw new IllegalArgumentException("game[] must be false");
+        }
+
+        if (game[0]) {
             throw new IllegalArgumentException("game[] must be false");
         }
 
@@ -32,8 +35,6 @@ public class Main {
 
         if (index >= game.length - 1) {
             return true;
-//        } else if (index < 0) {
-//            return false;
         }
 
         if (game[index]) {
@@ -42,21 +43,18 @@ public class Main {
 
 
         if (index - 1 > 0) {
-//            return crawl(index - 1, m, game, tested);
             if(crawl(index - 1, m, game, tested)) {
                 winnable = true;
             }
         }
 
         if (index + 1 < game.length) {
-//            return crawl(index + 1, m, game, tested);
             if(crawl(index + 1, m, game, tested)) {
                 winnable = true;
             }
         }
 
         if (index + m > 0) {
-//            return crawl(index + m, m, game, tested);
             if(crawl(index + m, m, game, tested)) {
                 winnable = true;
             }
