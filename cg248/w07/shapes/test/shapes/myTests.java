@@ -4,11 +4,15 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
-public class ExampleTests {
+
+/**
+ * Created by root on 22.06.17.
+ */
+public class myTests {
     @org.junit.Test
-    public void testEllipse() throws Exception {
-        Shape e = Shapes.makeEllipse(new V2(0, 0), new V2(1, 2));
-        V2 p1 = new V2(0.5, 1);
+    public void testRectangle() throws Exception {
+        Shape e = Shapes.makeRectangle(new V2(0, 0), new V2(1, 2));
+        V2 p1 = new V2(0.5, -1);
         V2 p2 = new V2(1,1);
         assertTrue(e.contains(p1));
         assertFalse(e.contains(p2));
