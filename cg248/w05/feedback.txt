@@ -1,0 +1,31 @@
+super!
+
+Punkte: 6/8
+
+
+Validation results for cg248/w05
+=====================================
+
+----------- Exercise: unit-tests
+Running 1 testcases: ALL PASSED
+
+
+----------- Exercise: line-intersection
+Running 1 testcases: ALL PASSED
+
+
+----------- Exercise: format-si
+Running 1 testcases: FAILED at test format-si-01
+Input was:<> expected:<...est failed: formatSI[Failing](formatsi.FormatTest...> but was:<...est failed: formatSI[(formatsi.FormatTest)
+Test failed: formatSIFailing(formatsi.FormatTest)
+Test failed: formatSI1(formatsi.FormatTest)
+Test failed: formatSI2(formatsi.FormatTest)
+Test failed: formatSI3(formatsi.FormatTest)
+Test failed: formatSI4(formatsi.FormatTest)
+Test failed: formatSI5](formatsi.FormatTest...>
+
+
+
+----------- Exercise: subsequence
+Running 16 testcases: ALL PASSED
+
