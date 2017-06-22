@@ -41,23 +41,17 @@ public class Ellipse implements Shape {
     public boolean contains(V2 point) {
 
         System.out.println(point.toString());
+        System.out.println(center.toString());
 
         if (center.getX() <= point.getX() && center.getY() < point.getY()) {
             // First Quadrant
             // The point must be smaller than the moving point on the X and on the Y axis.
             System.out.println("1");
 
-            System.out.println("(" + radii.getX() * Math.cos(Math.PI * x) + ", " + radii.getY() * Math.sin(Math.PI * x) + ")");
-
-
             for (double x = 0; x < 1.0 / 4.0; x += 0.00001) {
-                if (!(point.getX() > radii.getX() * Math.cos(Math.PI * x))) {
-                    System.out.println("ping1");
-                    return true;
-                }
+                if (!(point.getX() > radii.getX() * Math.cos(Math.PI * x) + center.getX()) && !(point.getY() > radii.getY() * Math.sin(Math.PI * x) + center.getY())) {
+//                    System.out.println("(" + (radii.getX() * Math.cos(Math.PI * x) + center.getX()) + ", " + (radii.getY() * Math.sin(Math.PI * x) + center.getY()) + ")");
 
-                if (!(point.getY() > radii.getY() * Math.sin(Math.PI * x))) {
-                    System.out.println("ping2");
                     return true;
                 }
             }
@@ -68,12 +62,9 @@ public class Ellipse implements Shape {
             // The point must be smaller than the moving point on the Y axis and greater on the X axis.
             System.out.println("2");
 
-            for (double x = 1 / 4; x < 2 / 4; x += 0.00001) {
-                if (!(point.getX() < radii.getX() * Math.cos(Math.PI * x))) {
-                    return true;
-                }
-
-                if (!(point.getY() > radii.getY() * Math.sin(Math.PI * x))) {
+            for (double x = 1.0 / 4.0; x < 2.0 / 4.0; x += 0.00001) {
+                if (!(point.getX() < -radii.getX() * Math.cos(Math.PI * x) + center.getX()) && !(point.getY() > radii.getY() * Math.sin(Math.PI * x) + center.getY())) {
+//                    System.out.println("(" + (-radii.getX() * Math.cos(Math.PI * x) + center.getX()) + ", " + (radii.getY() * Math.sin(Math.PI * x) + center.getY()) + ")");
                     return true;
                 }
             }
@@ -84,12 +75,11 @@ public class Ellipse implements Shape {
             // The point must be greater than the moving point on the Y axis and greater on the X axis.
             System.out.println("3");
 
-            for (double x = 2 / 4; x < 3 / 4; x += 0.00001) {
-                if (!(point.getX() < radii.getX() * Math.cos(Math.PI * x))) {
-                    return true;
-                }
+            for (double x = 2.0 / 4.0; x < 3.0 / 4.0; x += 0.00001) {
+                System.out.println("(" + (-radii.getX() * Math.cos(Math.PI * x) + center.getX()) + ", " + (-radii.getY() * Math.sin(Math.PI * x) + center.getY()) + ")");
 
-                if (!(point.getY() < radii.getY() * Math.sin(Math.PI * x))) {
+                if (!(point.getX() < radii.getX() * Math.cos(Math.PI * x) + center.getX()) && !(point.getY() < -radii.getY() * Math.sin(Math.PI * x) + center.getY())) {
+//                    System.out.println("(" + (radii.getX() * Math.cos(Math.PI * x) + center.getX()) + ", " + (-radii.getY() * Math.sin(Math.PI * x) + center.getY()) + ")");
                     return true;
                 }
             }
@@ -100,12 +90,9 @@ public class Ellipse implements Shape {
             // The point must be greater than the moving point on the Y axis and smaller on the X axis.
             System.out.println("4");
 
-            for (double x = 3 / 4; x < 4 / 4; x += 0.00001) {
-                if (!(point.getX() > radii.getX() * Math.cos(Math.PI * x))) {
-                     return true;
-                }
-
-                if (!(point.getY() < radii.getY() * Math.sin(Math.PI * x))) {
+            for (double x = 3.0 / 4.0; x < 4.0 / 4.0; x += 0.00001) {
+                if (!(point.getX() > -radii.getX() * Math.cos(Math.PI * x) + center.getX()) && !(point.getY() < -radii.getY() * Math.sin(Math.PI * x) + center.getY())) {
+//                    System.out.println("(" + (-radii.getX() * Math.cos(Math.PI * x) + center.getX()) + ", " + (-radii.getY() * Math.sin(Math.PI * x) + center.getY()) + ")");
                     return true;
                 }
             }
@@ -129,7 +116,7 @@ public class Ellipse implements Shape {
      * @return the new displaced shape
      */
     public Ellipse move(V2 displacement) {
-        return new Ellipse(this.center.move(displacement), this.radii);
+        return new Ellipse(this.center.move(new V2(displacement.getX(), -displacement.getY())), this.radii);
     }
 
     /**
