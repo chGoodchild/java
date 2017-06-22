@@ -38,9 +38,9 @@ public class Rectangle implements Shape {
     public boolean contains(V2 point) {
         V2 lowerRight = this.upperLeftCorner.move(new V2(dimensions.getX(), -dimensions.getY()));
 
-        System.out.println(toString());
-        System.out.println("Lower Right: " + lowerRight.toString());
-        System.out.println("Point: " + point.toString());
+//        System.out.println(toString());
+//        System.out.println("Lower Right: " + lowerRight.toString());
+//        System.out.println("Point: " + point.toString());
 
         if (upperLeftCorner.getX() < point.getX() && lowerRight.getX() > point.getX()
                 && upperLeftCorner.getY() > point.getY() && lowerRight.getY() < point.getY()) {
