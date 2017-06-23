@@ -34,12 +34,6 @@ public class Picture implements Shape {
         double dimX;
         double dimY;
 
-//        Shape upper;
-//        Shape left;
-//
-//        Shape lower;
-//        Shape right;
-
         uLx = shapes.get(0).boundingBox().getUpperLeftCorner().getX();
         uLy = shapes.get(0).boundingBox().getUpperLeftCorner().getY();
         dimX = shapes.get(0).boundingBox().getUpperLeftCorner().getX()
@@ -57,18 +51,16 @@ public class Picture implements Shape {
             }
 
             if (shapes.get(i).boundingBox().getUpperLeftCorner().getX()
-                    - shapes.get(i).boundingBox().getUpperLeftCorner().getX() > dimX) {
+                    + shapes.get(i).boundingBox().getDimensions().getX() > dimX) {
                 dimX = shapes.get(i).boundingBox().getDimensions().getX()
-                        - shapes.get(i).boundingBox().getUpperLeftCorner().getX();
+                        + shapes.get(i).boundingBox().getUpperLeftCorner().getX();
             }
 
             if (shapes.get(i).boundingBox().getUpperLeftCorner().getY()
-                    - shapes.get(i).boundingBox().getUpperLeftCorner().getY() > dimY) {
+                    - shapes.get(i).boundingBox().getDimensions().getY() < dimY) {
                 dimY = shapes.get(i).boundingBox().getUpperLeftCorner().getY()
                         - shapes.get(i).boundingBox().getDimensions().getY();
             }
-
-            System.out.println(uLx + ", " + uLy + ", " + dimX + ", " + dimY);
         }
 
         return new Box(new V2(uLx, uLy), new V2(dimX - uLx, uLy - dimY));
