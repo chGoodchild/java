@@ -42,8 +42,8 @@ public class Rectangle implements Shape {
 //        System.out.println("Lower Right: " + lowerRight.toString());
 //        System.out.println("Point: " + point.toString());
 
-        if (upperLeftCorner.getX() < point.getX() && lowerRight.getX() > point.getX()
-                && upperLeftCorner.getY() > point.getY() && lowerRight.getY() < point.getY()) {
+        if (upperLeftCorner.getX() <= point.getX() && lowerRight.getX() >= point.getX()
+                && upperLeftCorner.getY() >= point.getY() && lowerRight.getY() <= point.getY()) {
             return true;
         } else {
             return false;
@@ -72,5 +72,13 @@ public class Rectangle implements Shape {
     public String toString() {
         return "Upper Left: " + upperLeftCorner.toString() +
                 "\nDimensions: " + dimensions.toString();
+    }
+
+    public V2 pointOne() {
+        return upperLeftCorner;
+    }
+
+    public V2 pointTwo() {
+        return dimensions;
     }
 }

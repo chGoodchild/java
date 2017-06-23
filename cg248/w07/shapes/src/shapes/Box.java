@@ -30,4 +30,12 @@ public class Box {
     public V2 getDimensions() {
         return dimensions;
     }
+
+    public V2 pointOne() {
+        return upperLeftCorner;
+    }
+
+    public V2 pointTwo() {
+        return dimensions;
+    }
 }

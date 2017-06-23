@@ -71,7 +71,7 @@ public class myTests {
         Shape e = Shapes.makeEllipse(new V2(0, 0), new V2(2, 1));
         Shape r = Shapes.makeRectangle(new V2(0,2), new V2(1, 2));
         V2 p1 = new V2(0.5, 1);
-        V2 p2 = new V2(1,1);
+        V2 p2 = new V2(0.9,1);
 
         Shape pict = Shapes.makePicture(Arrays.asList(e, r));
 
@@ -82,6 +82,14 @@ public class myTests {
 
     @org.junit.Test
     public void testBoundingBox() throws Exception {
-        assertEquals(new V2(-1.0, 2.0), new Ellipse(new V2(0.0, 0.0), new V2(1.0, 2.0)).boundingBox().getUpperLeftCorner());
+        assertEquals(new V2(-1.0, 2.0), new Ellipse(new V2(0.0, 0.0),
+                new V2(1.0, 2.0)).boundingBox().getUpperLeftCorner());
     }
+//
+//    @org.junit.Test
+//    public void testBoundingBoxTwo() throws Exception {
+//        assertEquals(new V2(2.0, 4.5), new Picture(List(new Rectangle(new V2(0.0, 0.0),
+//                new V2(1.0, 1.0)), new Ellipse(new V2(0.5, 1.5),
+//                new V2(1.0, 2.0)))).boundingBox().getDimensions());
+//    }
 }

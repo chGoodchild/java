@@ -1,5 +1,6 @@
 package shapes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,6 +15,6 @@ public class Shapes {
         return new Rectangle(upperLeftCorner, dimensions);
     }
     public static Shape makePicture(List<Shape> shapes) {
-        return new Rectangle(new V2(1, 1), new V2(1, 1));
+        return new Picture(shapes);
     }
 }

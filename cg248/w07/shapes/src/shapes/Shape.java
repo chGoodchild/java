@@ -23,4 +23,8 @@ public interface Shape {
      * @return a box such that this shape is inside.
      */
     public Box boundingBox();
+
+    public V2 pointOne();
+
+    public V2 pointTwo();
 }

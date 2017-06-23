@@ -132,4 +132,12 @@ public class Ellipse implements Shape {
         V2 dimensions = new V2(radii.getX() * 2, radii.getY() * 2);
         return new Box(upperLeftCorner, dimensions);
     }
+
+    public V2 pointOne() {
+        return center;
+    }
+
+    public V2 pointTwo() {
+        return radii;
+    }
 }
