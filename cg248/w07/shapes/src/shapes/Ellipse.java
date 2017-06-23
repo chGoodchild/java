@@ -128,6 +128,8 @@ public class Ellipse implements Shape {
      * @return a box such that this shape is inside.
      */
     public Box boundingBox() {
-        return new Box(center, radii);
+        V2 upperLeftCorner = new V2(center.getX() - radii.getX(), center.getY() + radii.getY());
+        V2 dimensions = new V2(radii.getX() * 2, radii.getY() * 2);
+        return new Box(upperLeftCorner, dimensions);
     }
 }

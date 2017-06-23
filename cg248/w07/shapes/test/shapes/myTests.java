@@ -66,8 +66,6 @@ public class myTests {
         assertFalse(e.move(new V2(-2, 0)).contains(p1));
     }
 
-
-
     @org.junit.Test
     public void testPicture() throws Exception {
         Shape e = Shapes.makeEllipse(new V2(0, 0), new V2(2, 1));
@@ -80,7 +78,10 @@ public class myTests {
         assertTrue(pict.contains(p1));
         assertTrue(pict.contains(p2));
         assertFalse(pict.contains(new V2(2, 0.5)));
+    }
 
-
+    @org.junit.Test
+    public void testBoundingBox() throws Exception {
+        assertEquals(new V2(-1.0, 2.0), new Ellipse(new V2(0.0, 0.0), new V2(1.0, 2.0)).boundingBox().getUpperLeftCorner());
     }
 }

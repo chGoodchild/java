@@ -10,7 +10,13 @@ import java.util.ArrayList;
  *
  */
 public class Main {
-
+    /**
+     * Test if the input is valid and call a method that recursively "crawls" the array / plays the game in order to
+     * determine if the game is winnable or not.
+     * @param m The constant amount of steps that the player can move while playing.
+     * @param game A one dimensional space implemented as an Array of "fields" that the are either true or false.
+     * @return Return true if the game is winnable and false if it is not winnable.
+     */
     public static boolean isWinnable(int m, boolean[] game) {
         if (game.length < 1 || m <= 0) {
             throw new IllegalArgumentException("game[] must be false");
@@ -23,6 +29,16 @@ public class Main {
         return crawl(0, m, game, new ArrayList<>());
     }
 
+    /**
+     * A method that recursively "crawls" through the one dimensional space and returns true if the game is winnable.
+     * This method performs makes all the moves that the player could possible make.
+     * @param index The players current "location" in the one dimensional space.
+     * @param m  The constant amount of steps that the player can move while playing.
+     * @param game A one dimensional space implemented as an Array of "fields" that the are either true or false.
+     * @param tested An array List of all the indexes that have already been tested on this branch of recursion in order
+     *               to avoid a stack overflow.
+     * @return True if the game is winnable.
+     */
     public static boolean crawl(int index, int m, boolean[] game, ArrayList<Integer> tested) {
 
         boolean winnable = false;
@@ -40,7 +56,6 @@ public class Main {
         if (game[index]) {
             return false;
         }
-
 
         if (index - 1 > 0) {
             if(crawl(index - 1, m, game, tested)) {
