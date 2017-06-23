@@ -2,13 +2,15 @@ package shapes;
 
 /**
  * Created by Chandran Goodchild on 22.06.17.
+ *
+ * A class that describes the characteristics of a rectangle.
  */
 public class Rectangle implements Shape {
     public V2 upperLeftCorner;
     public V2 dimensions;
 
     /**
-     * A box is defined by its upper left corner and its dimensions.
+     * A Rectangle is defined by its upper left corner and its dimensions.
      * Dimensions have to be positive.
      *
      * As we are in cartesian coordinates, a box with upper left corner (0,0)
@@ -22,10 +24,18 @@ public class Rectangle implements Shape {
         this.dimensions = dimensions;
     }
 
+    /**
+     * Return the upper left the upper left corner
+     * @return A two dimensional Vector of type V2.
+     */
     public V2 getUpperLeftCorner() {
         return upperLeftCorner;
     }
 
+    /**
+     * Return dimensions of the Rectangle.
+     * @return A two dimensional Vector of type V2.
+     */
     public V2 getDimensions() {
         return dimensions;
     }
@@ -37,10 +47,6 @@ public class Rectangle implements Shape {
      */
     public boolean contains(V2 point) {
         V2 lowerRight = this.upperLeftCorner.move(new V2(dimensions.getX(), -dimensions.getY()));
-
-//        System.out.println(toString());
-//        System.out.println("Lower Right: " + lowerRight.toString());
-//        System.out.println("Point: " + point.toString());
 
         if (upperLeftCorner.getX() <= point.getX() && lowerRight.getX() >= point.getX()
                 && upperLeftCorner.getY() >= point.getY() && lowerRight.getY() <= point.getY()) {
@@ -68,16 +74,28 @@ public class Rectangle implements Shape {
     }
 
 
+    /**
+     * List the contents of this Object.
+     * @return Return a string.
+     */
     @Override
     public String toString() {
         return "Upper Left: " + upperLeftCorner.toString() +
                 "\nDimensions: " + dimensions.toString();
     }
 
+    /**
+     * Return the first point of this Object.
+     * @return Return a two dimensional Vector.
+     */
     public V2 pointOne() {
         return upperLeftCorner;
     }
 
+    /**
+     * Return the upper left corner of this Object.
+     * @return Return a two dimensional Vector.
+     */
     public V2 pointTwo() {
         return dimensions;
     }

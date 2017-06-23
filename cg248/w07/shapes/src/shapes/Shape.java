@@ -24,7 +24,15 @@ public interface Shape {
      */
     public Box boundingBox();
 
+    /**
+     * Return the first point of this Object.
+     * @return Return a two dimensional Vector.
+     */
     public V2 pointOne();
 
+    /**
+     * Return the upper left corner of this Object.
+     * @return Return a two dimensional Vector.
+     */
     public V2 pointTwo();
 }

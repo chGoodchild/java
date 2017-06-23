@@ -5,11 +5,17 @@ import java.util.List;
 
 /**
  * Created by Chandran Goodchild on 23.06.17.
+ *
+ * A class that describes the Characteristics of a picture.
  */
 public class Picture implements Shape {
     List<Shape> shapes = new ArrayList<Shape>();
     List<V2> picture = new ArrayList<V2>();
 
+    /**
+     * Constructor
+     * @param shapes
+     */
     public Picture (List<Shape> shapes) {
         this.shapes = shapes;
         int i = 0;
@@ -18,10 +24,6 @@ public class Picture implements Shape {
             picture.add(shapes.get(i).pointTwo());
             i++;
         }
-    }
-
-    public List<V2> returnPicture () {
-        return picture;
     }
 
     /**
@@ -90,10 +92,20 @@ public class Picture implements Shape {
         return new Rectangle(this.picture.get(0).move(displacement), this.picture.get(0));
     }
 
+    /**
+     * Return the first point of this Object.
+     * It is not needed in this Object.
+     * @return Return a two dimensional Vector.
+     */
     public V2 pointOne() {
         return new V2(1, 1);
     }
 
+    /**
+     * Return the upper left corner of this Object.
+     * It is not needed in this Object.
+     * @return Return a two dimensional Vector.
+     */
     public V2 pointTwo() {
         return new V2(1, 1);
     }

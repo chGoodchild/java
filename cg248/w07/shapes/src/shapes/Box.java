@@ -31,10 +31,18 @@ public class Box {
         return dimensions;
     }
 
+    /**
+     * Return the first point of this Object.
+     * @return Return a two dimensional Vector.
+     */
     public V2 pointOne() {
         return upperLeftCorner;
     }
 
+    /**
+     * Return the upper left corner of this Object.
+     * @return Return a two dimensional Vector.
+     */
     public V2 pointTwo() {
         return dimensions;
     }

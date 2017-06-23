@@ -2,6 +2,8 @@ package shapes;
 
 /**
  * Created by Chandran Goodchild on 22.06.17.
+ *
+ * A class that describes the characteristics of an Ellipse.
  */
 public class Ellipse implements Shape {
     public V2 center;
@@ -22,10 +24,18 @@ public class Ellipse implements Shape {
         this.radii = radii;
     }
 
+    /**
+     * Return the upper left the upper left corner
+     * @return A two dimensional Vector of type V2.
+     */
     public V2 getUpperLeftCorner() {
         return center;
     }
 
+    /**
+     * Return dimensions of the Rectangle.
+     * @return A two dimensional Vector of type V2.
+     */
     public V2 getDimensions() {
         return radii;
     }
@@ -40,9 +50,6 @@ public class Ellipse implements Shape {
      */
     public boolean contains(V2 point) {
 
-//        System.out.println(point.toString());
-//        System.out.println(center.toString());
-
         if (center.getX() == point.getX() && center.getY() == point.getY()) {
             return true;
         }
@@ -50,11 +57,10 @@ public class Ellipse implements Shape {
         if (center.getX() <= point.getX() && center.getY() < point.getY()) {
             // First Quadrant
             // The point must be smaller than the moving point on the X and on the Y axis.
-//            System.out.println("1");
 
             for (double x = 0; x < 1.0 / 4.0; x += 0.00001) {
-                if (!(point.getX() > radii.getX() * Math.cos(Math.PI * x) + center.getX()) && !(point.getY() > radii.getY() * Math.sin(Math.PI * x) + center.getY())) {
-//                    System.out.println("(" + (radii.getX() * Math.cos(Math.PI * x) + center.getX()) + ", " + (radii.getY() * Math.sin(Math.PI * x) + center.getY()) + ")");
+                if (!(point.getX() > radii.getX() * Math.cos(Math.PI * x)
+                        + center.getX()) && !(point.getY() > radii.getY() * Math.sin(Math.PI * x) + center.getY())) {
 
                     return true;
                 }
@@ -64,11 +70,10 @@ public class Ellipse implements Shape {
         if (center.getX() > point.getX() && center.getY() <= point.getY()) {
             // Second Quadrant
             // The point must be smaller than the moving point on the Y axis and greater on the X axis.
-//            System.out.println("2");
 
             for (double x = 1.0 / 4.0; x < 2.0 / 4.0; x += 0.00001) {
-                if (!(point.getX() < -radii.getX() * Math.cos(Math.PI * x) + center.getX()) && !(point.getY() > radii.getY() * Math.sin(Math.PI * x) + center.getY())) {
-//                    System.out.println("(" + (-radii.getX() * Math.cos(Math.PI * x) + center.getX()) + ", " + (radii.getY() * Math.sin(Math.PI * x) + center.getY()) + ")");
+                if (!(point.getX() < -radii.getX() * Math.cos(Math.PI * x)
+                        + center.getX()) && !(point.getY() > radii.getY() * Math.sin(Math.PI * x) + center.getY())) {
                     return true;
                 }
             }
@@ -77,13 +82,10 @@ public class Ellipse implements Shape {
         if (center.getX() >= point.getX() && center.getY() > point.getY()) {
             // Third Quadrant
             // The point must be greater than the moving point on the Y axis and greater on the X axis.
-//            System.out.println("3");
 
             for (double x = 2.0 / 4.0; x < 3.0 / 4.0; x += 0.00001) {
-//                System.out.println("(" + (-radii.getX() * Math.cos(Math.PI * x) + center.getX()) + ", " + (-radii.getY() * Math.sin(Math.PI * x) + center.getY()) + ")");
 
                 if (!(point.getX() < radii.getX() * Math.cos(Math.PI * x) + center.getX()) && !(point.getY() < -radii.getY() * Math.sin(Math.PI * x) + center.getY())) {
-//                    System.out.println("(" + (radii.getX() * Math.cos(Math.PI * x) + center.getX()) + ", " + (-radii.getY() * Math.sin(Math.PI * x) + center.getY()) + ")");
                     return true;
                 }
             }
@@ -92,18 +94,15 @@ public class Ellipse implements Shape {
         if (center.getX() < point.getX() && center.getY() >= point.getY()) {
             // Fourth Quadrant
             // The point must be greater than the moving point on the Y axis and smaller on the X axis.
-//            System.out.println("4");
 
             for (double x = 3.0 / 4.0; x < 4.0 / 4.0; x += 0.00001) {
                 if (!(point.getX() > -radii.getX() * Math.cos(Math.PI * x) + center.getX()) && !(point.getY() < -radii.getY() * Math.sin(Math.PI * x) + center.getY())) {
-//                    System.out.println("(" + (-radii.getX() * Math.cos(Math.PI * x) + center.getX()) + ", " + (-radii.getY() * Math.sin(Math.PI * x) + center.getY()) + ")");
                     return true;
                 }
             }
 
             return false;
         }
-
 
         V2 lowerRight = this.center.move(radii);
         if (center.getX() < point.getX() && lowerRight.getX() > point.getX()
@@ -133,10 +132,18 @@ public class Ellipse implements Shape {
         return new Box(upperLeftCorner, dimensions);
     }
 
+    /**
+     * Return the first point of this Object.
+     * @return Return a two dimensional Vector.
+     */
     public V2 pointOne() {
         return center;
     }
 
+    /**
+     * Return the upper left corner of this Object.
+     * @return Return a two dimensional Vector.
+     */
     public V2 pointTwo() {
         return radii;
     }
