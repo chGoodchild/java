@@ -1,0 +1,15 @@
+super, gut gelöst und ausreichenend getestet!
+
+Punkte: 6/6
+
+
+Validation results for cg248/w06
+=====================================
+
+----------- Exercise: food
+Running 12 tests: ALL PASSED
+
+----------- Exercise: rationals
+Running 29 tests: ALL PASSED
+
+----------- Exercise: block-world
