@@ -84,4 +84,11 @@ final public class Node {
 
         return elements;
     }
+
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
 }
