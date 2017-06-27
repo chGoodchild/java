@@ -5,12 +5,18 @@ import java.util.List;
 
 /**
  * Created by Chandran Goodchild on 26.06.17.
+ *
+ * A class that describes the structure of a binary tree.
  */
 public class Tree {
 
     Node head = null;
     int[] elements;
 
+    /**
+     * Constructor
+     * @param elements Return the elements of this tree.
+     */
     public Tree(int[] elements) {
         this.elements = elements;
 
@@ -23,6 +29,11 @@ public class Tree {
         }
     }
 
+    /**
+     * Recursively make an ArrayList of all the elements that the current tree contains.
+     * @param head
+     * @return The ArrayList at the current iteration depth.
+     */
     public ArrayList<Integer> listTree (Node head) {
         ArrayList<Integer> list = new ArrayList<>();
         ArrayList<Integer> leftList = new ArrayList<>();
@@ -50,6 +61,12 @@ public class Tree {
         return list;
     }
 
+    /**
+     * Return a NEW tree that is identical to the current tree, except that a node
+     * with the key "i" is added at it's respective place.
+     * @param i
+     * @return The modified tree.
+     */
     public Tree add(int i) {
 
         ArrayList<Integer> contents = listTree(this.head);
@@ -60,15 +77,16 @@ public class Tree {
         }
 
         Tree newTree = new Tree(empty);
-
-
         newTree.head.add(i);
-
-        System.out.println(newTree.elementsAsString());
 
         return newTree;
     }
 
+    /**
+     * Return true if the binary table contains a node with the given key. Else return false.
+     * @param i
+     * @return Return true if the binary table contains a node with the given key. Else return false.
+     */
     public boolean contains(int i) {
         if (head == null) {
             return false;
@@ -77,6 +95,10 @@ public class Tree {
         }
     }
 
+    /**
+     * Return the number of sub nodes beyond this node.
+     * @return The number of sub nodes beyond this node.
+     */
     public int size() {
         if (head == null) {
             return 0;
@@ -85,6 +107,10 @@ public class Tree {
         }
     }
 
+    /**
+     * Return the number of sub nodes beyond this node.
+     * @return The number of sub nodes beyond this node.
+     */
     public String elementsAsString() {
         if (head == null) {
             return "";
@@ -92,10 +118,5 @@ public class Tree {
             String str = head.elementsAsString();
             return str.substring(0, str.length() - 2);
         }
-    }
-
-    @Override
-    protected Tree clone() throws CloneNotSupportedException {
-        return (Tree)super.clone();
     }
 }
