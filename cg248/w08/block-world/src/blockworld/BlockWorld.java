@@ -55,7 +55,6 @@ public class BlockWorld {
 
                     if (this.blocks.get(i).x == m && this.blocks.get(i).y == n) {
                         this.world.get(m).get(n).add(this.blocks.get(i));
-//                        System.out.println("m = " + m + ", n = " + n + ", i = " + i);
                     }
                 }
             }
@@ -83,7 +82,6 @@ public class BlockWorld {
      */
     public char[][] observe() {
 
-//        int n = 0;
         char[][] out = new char[this.width][this.height];
 
         for (int m = 0; m < this.width; m++) {
@@ -207,8 +205,10 @@ public class BlockWorld {
         boolean is_dead = true;
         for (int m = 0; m < this.width; m++) {
             for (int n = 0; n < this.height - 1; n++) {
-                if (this.world.get(m).get(n).size() > 0) {
-                    is_dead = false;
+                for (int i = 0; i < this.world.get(m).get(n).size(); i++) {
+                    if (this.world.get(m).get(n).get(i).velocity > 0){
+                        is_dead = false;
+                    }
                 }
             }
         }

@@ -74,6 +74,22 @@ public class MyTestCases {
     public void jenkinsTestThree() {
         ArrayList<Block> block = new ArrayList<>();
         block.add(new Block(0, 0, 2, 'x'));
+        block.add(new Block(0, 0, 0, 'o'));
+        BlockWorld wLong = new BlockWorld(2, 6, block, '.');
+        wLong.step();
+        wLong.step();
+        wLong.step();
+
+        wLong.step();
+        wLong.step();
+        wLong.step();
+        assertEquals(true, wLong.isDead());
+    }
+
+    @Test
+    public void jenkinsTestFour() {
+        ArrayList<Block> block = new ArrayList<>();
+        block.add(new Block(0, 0, 2, 'x'));
         block.add(new Block(0, 0, 1, 'o'));
         BlockWorld w3 = new BlockWorld(2, 3, block, '.');
         w3.step();
