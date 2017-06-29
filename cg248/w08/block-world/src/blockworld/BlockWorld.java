@@ -103,6 +103,7 @@ public class BlockWorld {
         for (int m = 0; m < this.width; m++) {
             for (int n = 0; n < this.height; n++) {
                 for (int o = 0; o < this.world.get(m).get(n).size(); o++) {
+
                     this.world.get(m).get(n).get(o).y = this.world.get(m).get(n).get(o).y + this.world.get(m).get(n).get(o).velocity;
                     if (this.world.get(m).get(n).get(o).y  < 0) {
                         this.world.get(m).get(n).get(o).y = 0;
@@ -122,6 +123,7 @@ public class BlockWorld {
                 }
             }
         }
+
         sort();
     }
 
@@ -135,8 +137,7 @@ public class BlockWorld {
 
         for (int m = 0; m < this.width; m++) {
             for (int n = 0; n < this.height; n++) {
-                size = this.world.get(m).get(n).size();
-                for (int o = 0; o < size; o++) {
+                for (int o = 0; o < this.world.get(m).get(n).size(); o++) {
                     tmp = this.world.get(m).get(n).get(o);
 
                     if (tmp.x < 0) {
