@@ -34,6 +34,13 @@ public class BlockWorld {
 
         for (int i = 0; i < blocks.size(); i++) {
             this.blocks.add(blocks.get(i));
+            if (blocks.get(i).x >= this.width) {
+                throw new IllegalArgumentException();
+            }
+
+            if (blocks.get(i).y >= this.height) {
+                throw new IllegalArgumentException();
+            }
         }
 
             for (int m = 0; m < this.width; m++) {
@@ -100,11 +107,15 @@ public class BlockWorld {
      * Change the blocks location according to it's velocity.
      */
     public void step() {
+
+        int counter = 0;
+
         for (int m = 0; m < this.width; m++) {
             for (int n = 0; n < this.height; n++) {
                 for (int o = 0; o < this.world.get(m).get(n).size(); o++) {
 
                     this.world.get(m).get(n).get(o).y = this.world.get(m).get(n).get(o).y + this.world.get(m).get(n).get(o).velocity;
+
                     if (this.world.get(m).get(n).get(o).y  < 0) {
                         this.world.get(m).get(n).get(o).y = 0;
                     }
@@ -120,11 +131,16 @@ public class BlockWorld {
                     if (this.world.get(m).get(n).get(o).x  >= this.width) {
                         this.world.get(m).get(n).get(o).x = this.width - 1;
                     }
+
+                    counter++;
                 }
             }
         }
 
-        sort();
+        // Sort once per object.
+        for (int i = 0; i < counter; i++) {
+            sort();
+        }
     }
 
     /**

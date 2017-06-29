@@ -71,6 +71,16 @@ public class MyTestCases {
     }
 
     @Test
+    public void jenkinsTestThree() {
+        ArrayList<Block> block = new ArrayList<>();
+        block.add(new Block(0, 0, 2, 'x'));
+        block.add(new Block(0, 0, 1, 'o'));
+        BlockWorld w3 = new BlockWorld(2, 3, block, '.');
+        w3.step();
+        assertArrayEquals(new char[][]{ new char[]{ '.', 'o', 'x'}, new char[]{'.', '.', '.'}}, w3.observe());
+    }
+
+    @Test
     public void testPassingWorldConstruction() {
         List<Block> bs = Collections.singletonList(new Block (0, 0, 1, 'x'));
         BlockWorld w = new BlockWorld(1, 3, bs, '.');
