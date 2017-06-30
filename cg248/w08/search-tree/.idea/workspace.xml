@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="11096de2-6f53-49c2-939f-c09dc9da0764" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/search-tree/searchtree/Node.class" afterPath="$PROJECT_DIR$/out/production/search-tree/searchtree/Node.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/search-tree/searchtree/Tree.class" afterPath="$PROJECT_DIR$/out/production/search-tree/searchtree/Tree.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/search-tree/searchtree/Trees.class" afterPath="$PROJECT_DIR$/out/production/search-tree/searchtree/Trees.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/search-tree/searchtree/TestExamples.class" afterPath="$PROJECT_DIR$/out/test/search-tree/searchtree/TestExamples.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="search-tree.iws" />
@@ -23,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/searchtree/MyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,8 +42,8 @@
       <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/searchtree/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="87" column="9" lean-forward="true" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+            <state relative-caret-position="1530">
+              <caret line="87" column="9" lean-forward="false" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -48,8 +52,33 @@
       <file leaf-file-name="Tree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/searchtree/Tree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-123">
-              <caret line="101" column="19" lean-forward="false" selection-start-line="101" selection-start-column="15" selection-end-line="101" selection-end-column="19" />
+            <state relative-caret-position="254">
+              <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/searchtree/ArrayList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="43">
+              <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+              <folding>
+                <element signature="e#787#788#0" expanded="true" />
+                <element signature="e#822#823#0" expanded="true" />
+                <element signature="e#955#956#0" expanded="true" />
+                <element signature="e#986#987#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestExamples.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/searchtree/TestExamples.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="86">
+              <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,10 +91,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
               <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-              <folding>
-                <element signature="e#251#252#0" expanded="true" />
-                <element signature="e#292#293#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,6 +112,8 @@
       <find>sizew</find>
       <find>size</find>
       <find>contains</find>
+      <find>listTree</find>
+      <find>System.out</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -102,17 +130,17 @@
         <option value="$PROJECT_DIR$/src/searchtree/node.java" />
         <option value="$PROJECT_DIR$/test/searchtree/TestExamples.java" />
         <option value="$PROJECT_DIR$/src/searchtree/Node.java" />
-        <option value="$PROJECT_DIR$/src/searchtree/Tree.java" />
         <option value="$PROJECT_DIR$/src/searchtree/Trees.java" />
         <option value="$PROJECT_DIR$/test/searchtree/MyTest.java" />
+        <option value="$PROJECT_DIR$/src/searchtree/Tree.java" />
+        <option value="$PROJECT_DIR$/src/searchtree/ArrayList.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1367" />
-    <option name="y" value="-779" />
-    <option name="width" value="1368" />
-    <option name="height" value="780" />
+    <option name="y" value="-1540" />
+    <option name="width" value="1366" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -129,6 +157,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -180,8 +210,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -578,43 +606,50 @@
       <option name="project" value="LOCAL" />
       <updated>1498597702926</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003">
+      <created>1498850729765</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1498850729766</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MyTest - 2017.06.27 at 22h 56m 53s.xml">
+    <history-entry file="MyTest - 2017.06.30 at 21h 22m 41s.xml">
       <configuration name="MyTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyTest - 2017.06.27 at 23h 06m 09s.xml">
-      <configuration name="MyTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyTest - 2017.06.27 at 23h 07m 48s.xml">
-      <configuration name="MyTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestExamples - 2017.06.27 at 21h 46m 17s.xml">
-      <configuration name="TestExamples" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestExamples - 2017.06.27 at 21h 46m 44s.xml">
-      <configuration name="TestExamples" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestExamples - 2017.06.27 at 22h 08m 43s.xml">
-      <configuration name="TestExamples" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestExamples - 2017.06.27 at 22h 10m 00s.xml">
-      <configuration name="TestExamples" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestExamples - 2017.06.27 at 22h 26m 21s.xml">
-      <configuration name="TestExamples" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestExamples - 2017.06.27 at 22h 30m 24s.xml">
-      <configuration name="TestExamples" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestExamples - 2017.06.27 at 22h 49m 33s.xml">
       <configuration name="TestExamples" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestExamples - 2017.06.30 at 21h 16m 55s.xml">
+      <configuration name="TestExamples" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestExamples - 2017.06.30 at 21h 17m 56s.xml">
+      <configuration name="TestExamples" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestExamples - 2017.06.30 at 21h 18m 16s.xml">
+      <configuration name="TestExamples" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestExamples - 2017.06.30 at 21h 18m 59s.xml">
+      <configuration name="TestExamples" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestExamples - 2017.06.30 at 21h 20m 50s.xml">
+      <configuration name="TestExamples" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestExamples - 2017.06.30 at 21h 21m 21s.xml">
+      <configuration name="TestExamples" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestExamples - 2017.06.30 at 21h 21m 54s.xml">
+      <configuration name="TestExamples" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestExamples - 2017.06.30 at 21h 22m 29s.xml">
+      <configuration name="TestExamples" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1367" y="-779" width="1368" height="780" extended-state="6" />
+    <frame x="0" y="-1540" width="1366" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -671,6 +706,40 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test/searchtree/MyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/searchtree/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="87" column="9" lean-forward="true" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/searchtree/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="101" column="19" lean-forward="false" selection-start-line="101" selection-start-column="15" selection-end-line="101" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/searchtree/Trees.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/searchtree/TestExamples.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -693,10 +762,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding>
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -704,9 +770,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -724,9 +788,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="33" lean-forward="false" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -734,10 +796,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -753,11 +812,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/searchtree/Leaf.java" />
     <entry file="file://$PROJECT_DIR$/src/searchtree/node.java" />
-    <entry file="file://$PROJECT_DIR$/test/searchtree/TreeTest.java">
+    <entry file="file://$PROJECT_DIR$/test/searchtree/TreeTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/searchtree/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="1530">
+          <caret line="87" column="9" lean-forward="false" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/searchtree/MyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -765,45 +835,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/searchtree/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
           <folding>
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/searchtree/Tree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
-          <caret line="101" column="19" lean-forward="false" selection-start-line="101" selection-start-column="15" selection-end-line="101" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/searchtree/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="87" column="9" lean-forward="true" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+        <state relative-caret-position="254">
+          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/searchtree/TestExamples.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/searchtree/MyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="86">
+          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

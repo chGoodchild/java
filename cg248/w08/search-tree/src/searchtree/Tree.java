@@ -1,7 +1,5 @@
 package searchtree;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Chandran Goodchild on 26.06.17.
@@ -34,10 +32,10 @@ public class Tree {
      * @param head
      * @return The ArrayList at the current iteration depth.
      */
-    public ArrayList<Integer> listTree (Node head) {
-        ArrayList<Integer> list = new ArrayList<>();
-        ArrayList<Integer> leftList = new ArrayList<>();
-        ArrayList<Integer> rightList = new ArrayList<>();
+    public ArrayList listTree (Node head) {
+        ArrayList list = new ArrayList();
+        ArrayList leftList = new ArrayList();
+        ArrayList rightList = new ArrayList();
 
 
         if (head.right != null) {
@@ -69,7 +67,7 @@ public class Tree {
      */
     public Tree add(int i) {
 
-        ArrayList<Integer> contents = listTree(this.head);
+        ArrayList contents = listTree(this.head);
         int[] empty = new int[contents.size()];
 
         for (int n = 0; n < contents.size(); n++) {

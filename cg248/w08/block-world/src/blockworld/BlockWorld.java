@@ -30,11 +30,10 @@ public class BlockWorld {
         this.height = height;
         this.empty = empty;
 
-        // this.blocks = blocks;
         this.blocks = new ArrayList<Block>();
 
+        // Make sure that this List<Block> contains NEW blocks!
         for (int i = 0; i < blocks.size(); i++) {
-//            this.blocks.add(blocks.get(i));
             this.blocks.add(new Block(blocks.get(i).x, blocks.get(i).y, blocks.get(i).velocity, blocks.get(i).shape));
 
             if (blocks.get(i).x >= this.width) {
@@ -100,14 +99,6 @@ public class BlockWorld {
                     }
                 }
             }
-        }
-
-        for (int m = 0; m < this.width; m++) {
-            System.out.print("{");
-            for (int n = 0; n < this.height; n++) {
-                    System.out.print(out[m][n] + ", ");
-            }
-            System.out.print("}\n");
         }
 
         return out;
@@ -186,19 +177,9 @@ public class BlockWorld {
                     newY = tmp.y;
 
                     if (newX != m || newY != n) {
-//                        System.out.println(m);
-//                        System.out.println(n);
-//                        System.out.println(newX);
-//                        System.out.println(newY);
-//                        System.out.println(this.width);
-//                        System.out.println(this.height);
-
                         if (newX <= this.width - 1 && newY <= this.height - 1) {
-//                            System.out.println("Start");
                             this.world.get(m).get(n).remove(o);
-//                            System.out.println("PING");
                             this.world.get(newX).get(newY).add(tmp);
-//                            System.out.println("PING");
                         } else {
                             throw new IllegalStateException();
                         }
