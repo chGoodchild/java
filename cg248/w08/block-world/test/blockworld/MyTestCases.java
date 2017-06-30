@@ -1,5 +1,7 @@
 package blockworld;
 
+import org.hamcrest.core.IsEqual;
+import org.hamcrest.core.IsNot;
 import org.junit.Test;
 
 import java.lang.reflect.Array;
@@ -29,8 +31,17 @@ public class MyTestCases {
         // Test observe
         assertArrayEquals(new char[][]{ new char[]{ '.', 'x', '.'}}, w.observe());
 
-        // Test sort
+        assertThat(bs, IsNot.not(IsEqual.equalTo(w.blocks)));
+
+        // Test "new object"
         bs.get(0).y = 0;
+        assertArrayEquals(new char[][]{ new char[]{ '.', 'x', '.'}}, w.observe());
+        w.sort();
+
+        assertThat(new char[][]{ new char[]{ 'x', '.', '.'}}, IsNot.not(IsEqual.equalTo((w.observe()))));
+
+        // Test sort
+        w.world.get(0).get(1).get(0).y = 0;
         assertArrayEquals(new char[][]{ new char[]{ '.', 'x', '.'}}, w.observe());
         w.sort();
         assertArrayEquals(new char[][]{ new char[]{ 'x', '.', '.'}}, w.observe());
@@ -96,13 +107,33 @@ public class MyTestCases {
         assertArrayEquals(new char[][]{ new char[]{ '.', 'o', 'x'}, new char[]{'.', '.', '.'}}, w3.observe());
     }
 
+
+    @Test
+    public void jenkinsTestFive() {
+        ArrayList<Block> blocks = new ArrayList<>();
+        blocks.add(new Block(0, 0, 2, 'x'));
+        blocks.add(new Block(1, 0, 1, 'o'));
+
+        BlockWorld w1 = new BlockWorld(2, 3, blocks, '.');
+        w1.step();
+        assertArrayEquals(new char[][]{ new char[]{ '.', '.', 'x'}, new char[]{'.', 'o', '.'}}, w1.observe());
+
+        BlockWorld w2 = new BlockWorld(2, 3, blocks, '.');
+        assertArrayEquals(new char[][]{ new char[]{ 'x', '.', '.'}, new char[]{'o', '.', '.'}}, w2.observe());
+
+        BlockWorld w3 = new BlockWorld(2, 3, blocks, '.');
+        w3.step();
+
+        assertEquals(false, w3.isDead());
+    }
+
     @Test
     public void testPassingWorldConstruction() {
         List<Block> bs = Collections.singletonList(new Block (0, 0, 1, 'x'));
         BlockWorld w = new BlockWorld(1, 3, bs, '.');
         assertEquals(1, w.width);
         assertEquals(3, w.height);
-        assertEquals(bs, w.blocks);
+        assertThat(bs, IsNot.not(IsEqual.equalTo(w.blocks)));
         assertEquals('.', w.empty);
 
         // Test getWidth:

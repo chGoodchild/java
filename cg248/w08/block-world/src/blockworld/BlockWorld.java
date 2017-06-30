@@ -1,5 +1,6 @@
 package blockworld;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +34,9 @@ public class BlockWorld {
         this.blocks = new ArrayList<Block>();
 
         for (int i = 0; i < blocks.size(); i++) {
-            this.blocks.add(blocks.get(i));
+//            this.blocks.add(blocks.get(i));
+            this.blocks.add(new Block(blocks.get(i).x, blocks.get(i).y, blocks.get(i).velocity, blocks.get(i).shape));
+
             if (blocks.get(i).x >= this.width) {
                 throw new IllegalArgumentException();
             }
@@ -98,6 +101,15 @@ public class BlockWorld {
                 }
             }
         }
+
+        for (int m = 0; m < this.width; m++) {
+            System.out.print("{");
+            for (int n = 0; n < this.height; n++) {
+                    System.out.print(out[m][n] + ", ");
+            }
+            System.out.print("}\n");
+        }
+
         return out;
     }
 
