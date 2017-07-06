@@ -1,0 +1,92 @@
+Punkte: 6/8
+
+die kompilierenden Aufgaben wurden super gelöst!
+
+zu block-world:
+für die iteration vielleicht intuitivere variablen wie h und w nehmen, dann sind diese Ausdrücke auch lesbarer:
+this.world.get(m).get(n).size()
+
+
+Validation results for cg248/w08
+=====================================
+
+----------- Exercise: search-tree
+Running 11 tests: ALL PASSED
+
+----------- Exercise: loop-interpreter
+COMPILATION FAILED
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:6: error: cannot find symbol
+import static loopinterpreter.Statements.*;
+                             ^
+  symbol:   class Statements
+  location: package loopinterpreter
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:18: error: cannot find symbol
+        Statement stmt = assign("Y", binop(var("X"), Binary.ADD, constant(1)));
+        ^
+  symbol:   class Statement
+  location: class TestExamples
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:18: error: cannot find symbol
+        Statement stmt = assign("Y", binop(var("X"), Binary.ADD, constant(1)));
+                         ^
+  symbol:   method assign(String,Expression)
+  location: class TestExamples
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:33: error: cannot find symbol
+        Statement stmt = seq(assign("Y", binop(var("X"), Binary.ADD, constant(1))),
+        ^
+  symbol:   class Statement
+  location: class TestExamples
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:33: error: cannot find symbol
+        Statement stmt = seq(assign("Y", binop(var("X"), Binary.ADD, constant(1))),
+                             ^
+  symbol:   method assign(String,Expression)
+  location: class TestExamples
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:34: error: cannot find symbol
+                             assign("X", var("Y")));
+                             ^
+  symbol:   method assign(String,Expression)
+  location: class TestExamples
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:51: error: cannot find symbol
+        Statement stmt = cond(var("X"),
+        ^
+  symbol:   class Statement
+  location: class TestExamples
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:52: error: cannot find symbol
+                              assign("X", binop(var("X"), Binary.ADD, constant(1))),
+                              ^
+  symbol:   method assign(String,Expression)
+  location: class TestExamples
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:53: error: cannot find symbol
+                              assign("X", var("X")));
+                              ^
+  symbol:   method assign(String,Expression)
+  location: class TestExamples
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:62: error: cannot find symbol
+                    assign("X", binop(var("X"), Binary.ADD, constant(1))),
+                    ^
+  symbol:   method assign(String,Expression)
+  location: class TestExamples
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:63: error: cannot find symbol
+                    assign("X", var("X")));
+                    ^
+  symbol:   method assign(String,Expression)
+  location: class TestExamples
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:81: error: cannot find symbol
+        Statement stmt = loop(var("X"),
+        ^
+  symbol:   class Statement
+  location: class TestExamples
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:82: error: cannot find symbol
+                              seq(assign("X", binop(var("X"), Binary.SUB, constant(1))),
+                                  ^
+  symbol:   method assign(String,Expression)
+  location: class TestExamples
+cg248/w08/loop-interpreter/test/loopinterpreter/TestExamples.java:83: error: cannot find symbol
+                                  assign("Y", binop(var("Y"), Binary.ADD, constant(2))))
+                                  ^
+  symbol:   method assign(String,Expression)
+  location: class TestExamples
+14 errors
+
+----------- Exercise: block-world
+Running 20 tests: ALL PASSED
+Running 2 tests: ALL PASSED

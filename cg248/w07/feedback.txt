@@ -1,0 +1,18 @@
+Punkte: 6/6
+
+
+
+
+Validation results for cg248/w07
+=====================================
+
+----------- Exercise: one-d-game
+Running 27 tests: ALL PASSED
+
+statt einem tested array, könnte man auch die besuchte Position auf true setzen
+
+----------- Exercise: shapes
+Running 17 tests: ALL PASSED
+Running 5 tests: ALL PASSED
+
+contains hätte sich noch vereinfachen lassen

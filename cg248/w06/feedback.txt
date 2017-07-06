@@ -1,7 +1,6 @@
 super, gut gelöst und ausreichenend getestet!
 
-Punkte: 6/6
-
+Punkte: 4/4
 
 Validation results for cg248/w06
 =====================================
@@ -13,3 +12,4 @@ Running 12 tests: ALL PASSED
 Running 29 tests: ALL PASSED
 
 ----------- Exercise: block-world
+Die block-world Aufgabe zählt erst zu Blatt und daher nicht relevant
